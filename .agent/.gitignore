@@ -1,0 +1,16 @@
+# System files
+.DS_Store
+Thumbs.db
+
+# Runtime & Preview files
+*.log
+*.pid
+*.port
+preview.log
+preview.pid
+preview.port
+
+# Node & IDE
+node_modules/
+.vscode/
+.idea/

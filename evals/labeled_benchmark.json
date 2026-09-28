@@ -1,0 +1,477 @@
+[
+  {
+    "id": "eval_001",
+    "name": "FinShield Pay",
+    "industry": "Fintech & Payments",
+    "headcount": 160,
+    "cloud_environment": "AWS (EKS, RDS, S3)",
+    "tech_stack": ["AWS", "Kubernetes", "PostgreSQL", "Kafka"],
+    "compliance_mandates": ["PCI-DSS Level 1", "SOC 2 Type II"],
+    "engineering_growth_6m_pct": 45,
+    "security_headcount": 0,
+    "recent_triggers": "Series B raised; launched merchant checkout API; zero security hires.",
+    "ground_truth": {
+      "tier": "TIER_1_CRITICAL",
+      "min_score": 85,
+      "max_score": 100,
+      "key_signal": "SECURITY_DEBT_DISPARITY",
+      "is_icp": true
+    }
+  },
+  {
+    "id": "eval_002",
+    "name": "HealthGrid Telehealth",
+    "industry": "Healthcare & Telehealth",
+    "headcount": 95,
+    "cloud_environment": "Google Cloud Platform (GCP)",
+    "tech_stack": ["GCP", "Python", "FastAPI", "BigQuery"],
+    "compliance_mandates": ["HIPAA", "Privacy Act"],
+    "engineering_growth_6m_pct": 30,
+    "security_headcount": 0,
+    "recent_triggers": "Signed state hospital network; processing 50k patient consultation records monthly.",
+    "ground_truth": {
+      "tier": "TIER_1_CRITICAL",
+      "min_score": 85,
+      "max_score": 100,
+      "key_signal": "SENSITIVE_DATA_EXPOSURE",
+      "is_icp": true
+    }
+  },
+  {
+    "id": "eval_003",
+    "name": "Golden Crust Artisan Bakery",
+    "industry": "Food & Beverage Retail",
+    "headcount": 35,
+    "cloud_environment": "None",
+    "tech_stack": ["Square POS", "WordPress"],
+    "compliance_mandates": [],
+    "engineering_growth_6m_pct": 0,
+    "security_headcount": 0,
+    "recent_triggers": "Opened third location downtown.",
+    "ground_truth": {
+      "tier": "DISQUALIFIED",
+      "min_score": 0,
+      "max_score": 24,
+      "key_signal": "NON_TECH_BRICK_AND_MORTAR",
+      "is_icp": false
+    }
+  },
+  {
+    "id": "eval_004",
+    "name": "Global Megabank International",
+    "industry": "Investment Banking",
+    "headcount": 48000,
+    "cloud_environment": "Private Cloud + Hybrid AWS",
+    "tech_stack": ["Mainframe", "AWS", "Splunk", "CrowdStrike", "CyberArk"],
+    "compliance_mandates": ["SOX", "PCI-DSS", "APRA CPS 234", "ISO 27001"],
+    "engineering_growth_6m_pct": 3,
+    "security_headcount": 350,
+    "recent_triggers": "Acquired regional brokerage firm; published annual cybersecurity transparency report.",
+    "ground_truth": {
+      "tier": "DISQUALIFIED",
+      "min_score": 0,
+      "max_score": 30,
+      "key_signal": "MEGA_ENTERPRISE_ENTRENCHED",
+      "is_icp": false
+    }
+  },
+  {
+    "id": "eval_005",
+    "name": "Apex Cleaners Commercial",
+    "industry": "Facilities Management",
+    "headcount": 70,
+    "cloud_environment": "None",
+    "tech_stack": ["Microsoft 365", "Xero"],
+    "compliance_mandates": [],
+    "engineering_growth_6m_pct": 0,
+    "security_headcount": 0,
+    "recent_triggers": "Renewed airport terminal janitorial service contract.",
+    "ground_truth": {
+      "tier": "DISQUALIFIED",
+      "min_score": 0,
+      "max_score": 20,
+      "key_signal": "NON_TECH_BRICK_AND_MORTAR",
+      "is_icp": false
+    }
+  },
+  {
+    "id": "eval_006",
+    "name": "DataVault Legal Analytics",
+    "industry": "LegalTech",
+    "headcount": 140,
+    "cloud_environment": "AWS (Sydney Region)",
+    "tech_stack": ["AWS", "Elasticsearch", "Python", "Docker"],
+    "compliance_mandates": ["SOC 2 Type II", "ISO 27001"],
+    "engineering_growth_6m_pct": 35,
+    "security_headcount": 0,
+    "recent_triggers": "Onboarding top 10 international law firms; handling confidential M&A litigation documents.",
+    "ground_truth": {
+      "tier": "TIER_1_CRITICAL",
+      "min_score": 85,
+      "max_score": 100,
+      "key_signal": "PRIVILEGED_DATA_SCRUTINY",
+      "is_icp": true
+    }
+  },
+  {
+    "id": "eval_007",
+    "name": "CloudScale Logistics",
+    "industry": "Supply Chain & Logistics",
+    "headcount": 310,
+    "cloud_environment": "Microsoft Azure + Edge IoT",
+    "tech_stack": ["Azure", "C#", ".NET Core", "Azure IoT Hub"],
+    "compliance_mandates": ["SOC 2 Type II"],
+    "engineering_growth_6m_pct": 25,
+    "security_headcount": 1,
+    "recent_triggers": "Connected 1,000 warehouse handheld scanners to central Azure network.",
+    "ground_truth": {
+      "tier": "TIER_1_CRITICAL",
+      "min_score": 80,
+      "max_score": 95,
+      "key_signal": "IOT_ATTACK_SURFACE",
+      "is_icp": true
+    }
+  },
+  {
+    "id": "eval_008",
+    "name": "SentryGov Solutions",
+    "industry": "GovTech",
+    "headcount": 220,
+    "cloud_environment": "AWS GovCloud (Australia)",
+    "tech_stack": ["AWS GovCloud", "TypeScript", "React", "PostgreSQL"],
+    "compliance_mandates": ["IRAP PROTECTED", "Essential Eight Level 3"],
+    "engineering_growth_6m_pct": 18,
+    "security_headcount": 2,
+    "recent_triggers": "Bidding for federal department identity modernization tender requiring Essential Eight certification.",
+    "ground_truth": {
+      "tier": "TIER_2_MODERATE",
+      "min_score": 70,
+      "max_score": 84,
+      "key_signal": "GOV_COMPLIANCE_MANDATE",
+      "is_icp": true
+    }
+  },
+  {
+    "id": "eval_009",
+    "name": "Beacon InsurTech",
+    "industry": "InsurTech",
+    "headcount": 135,
+    "cloud_environment": "AWS Serverless (Lambda, DynamoDB)",
+    "tech_stack": ["AWS Lambda", "Node.js", "DynamoDB", "Auth0"],
+    "compliance_mandates": ["NYDFS 500", "SOC 2 Type II"],
+    "engineering_growth_6m_pct": 28,
+    "security_headcount": 0,
+    "recent_triggers": "Annual NYDFS cyber compliance filing due within 90 days; serverless infrastructure expanded.",
+    "ground_truth": {
+      "tier": "TIER_2_MODERATE",
+      "min_score": 70,
+      "max_score": 84,
+      "key_signal": "REGULATORY_AUDIT",
+      "is_icp": true
+    }
+  },
+  {
+    "id": "eval_010",
+    "name": "TalentWave HR SaaS",
+    "industry": "HRTech",
+    "headcount": 290,
+    "cloud_environment": "AWS + Kubernetes",
+    "tech_stack": ["AWS", "EKS", "Ruby on Rails", "Snowflake"],
+    "compliance_mandates": ["SOC 2 Type II", "GDPR"],
+    "engineering_growth_6m_pct": 14,
+    "security_headcount": 1,
+    "recent_triggers": "Four enterprise deals held up in security review over third-party vulnerability reports.",
+    "ground_truth": {
+      "tier": "TIER_2_MODERATE",
+      "min_score": 65,
+      "max_score": 79,
+      "key_signal": "ENTERPRISE_DEAL_BLOCKER",
+      "is_icp": true
+    }
+  },
+  {
+    "id": "eval_011",
+    "name": "QuickBite Ghost Kitchens",
+    "industry": "FoodTech",
+    "headcount": 110,
+    "cloud_environment": "Heroku",
+    "tech_stack": ["Heroku", "Node.js", "PostgreSQL", "Shopify"],
+    "compliance_mandates": ["Basic PCI"],
+    "engineering_growth_6m_pct": 5,
+    "security_headcount": 0,
+    "recent_triggers": "Steady retail restaurant operations; no recent architecture changes.",
+    "ground_truth": {
+      "tier": "TIER_3_LOW",
+      "min_score": 25,
+      "max_score": 45,
+      "key_signal": "STATIC_FOOTPRINT",
+      "is_icp": false
+    }
+  },
+  {
+    "id": "eval_012",
+    "name": "OmniRetail Direct",
+    "industry": "E-Commerce",
+    "headcount": 420,
+    "cloud_environment": "Hybrid AWS + Legacy On-Prem",
+    "tech_stack": ["AWS", "PHP/Magento", "Shopify Plus", "MySQL"],
+    "compliance_mandates": ["PCI-DSS Level 2", "CCPA"],
+    "engineering_growth_6m_pct": 12,
+    "security_headcount": 1,
+    "recent_triggers": "Suffered credential stuffing bot attack on checkout 3 weeks ago.",
+    "ground_truth": {
+      "tier": "TIER_1_CRITICAL",
+      "min_score": 85,
+      "max_score": 100,
+      "key_signal": "ACTIVE_THREAT_TRIGGER",
+      "is_icp": true
+    }
+  },
+  {
+    "id": "eval_013",
+    "name": "FinEdge Wealth Advisory",
+    "industry": "Wealth Management",
+    "headcount": 90,
+    "cloud_environment": "AWS + M365",
+    "tech_stack": ["AWS", "Salesforce", "PostgreSQL", "Okta"],
+    "compliance_mandates": ["ASIC RG 271", "SOC 2"],
+    "engineering_growth_6m_pct": 24,
+    "security_headcount": 0,
+    "recent_triggers": "Launched high net worth customer portal managing $1.2B in client assets.",
+    "ground_truth": {
+      "tier": "TIER_1_CRITICAL",
+      "min_score": 80,
+      "max_score": 95,
+      "key_signal": "HIGH_VALUE_TARGET",
+      "is_icp": true
+    }
+  },
+  {
+    "id": "eval_014",
+    "name": "AeroParts Defense Precision",
+    "industry": "Aerospace Manufacturing",
+    "headcount": 560,
+    "cloud_environment": "Private Cloud + Hybrid Azure",
+    "tech_stack": ["Azure", "Windows Server", "SAP ERP"],
+    "compliance_mandates": ["DISP Level 2", "NIST 800-171"],
+    "engineering_growth_6m_pct": 8,
+    "security_headcount": 2,
+    "recent_triggers": "Subcontracted for defense aviation blueprint manufacturing.",
+    "ground_truth": {
+      "tier": "TIER_2_MODERATE",
+      "min_score": 70,
+      "max_score": 82,
+      "key_signal": "DEFENSE_SUPPLY_CHAIN",
+      "is_icp": true
+    }
+  },
+  {
+    "id": "eval_015",
+    "name": "HyperCart QuickDelivery",
+    "industry": "Quick Commerce",
+    "headcount": 195,
+    "cloud_environment": "GCP + Firebase",
+    "tech_stack": ["GCP", "Firebase", "Flutter", "Node.js"],
+    "compliance_mandates": ["PCI-DSS Level 3", "Privacy Act"],
+    "engineering_growth_6m_pct": 22,
+    "security_headcount": 0,
+    "recent_triggers": "Mobile app downloads passed 1.5M; tracking live rider GPS location.",
+    "ground_truth": {
+      "tier": "TIER_2_MODERATE",
+      "min_score": 65,
+      "max_score": 79,
+      "key_signal": "MOBILE_GEO_PRIVACY",
+      "is_icp": true
+    }
+  },
+  {
+    "id": "eval_016",
+    "name": "GreenGrid Energy IoT",
+    "industry": "CleanTech / Smart Grid",
+    "headcount": 230,
+    "cloud_environment": "AWS + SCADA IoT",
+    "tech_stack": ["AWS IoT", "Go", "TimescaleDB", "Terraform"],
+    "compliance_mandates": ["SOCI Act", "ISO 27001"],
+    "engineering_growth_6m_pct": 30,
+    "security_headcount": 1,
+    "recent_triggers": "Designated critical infrastructure provider under Australian SOCI legislation.",
+    "ground_truth": {
+      "tier": "TIER_1_CRITICAL",
+      "min_score": 90,
+      "max_score": 100,
+      "key_signal": "CRITICAL_INFRASTRUCTURE_REGULATION",
+      "is_icp": true
+    }
+  },
+  {
+    "id": "eval_017",
+    "name": "EduSphere University LMS",
+    "industry": "EdTech",
+    "headcount": 180,
+    "cloud_environment": "AWS + Kubernetes",
+    "tech_stack": ["AWS", "EKS", "Node.js", "MongoDB"],
+    "compliance_mandates": ["FERPA", "SOC 2 Type II"],
+    "engineering_growth_6m_pct": 12,
+    "security_headcount": 0,
+    "recent_triggers": "Contracted with 6 state university systems; managing student demographic and grade data.",
+    "ground_truth": {
+      "tier": "TIER_2_MODERATE",
+      "min_score": 60,
+      "max_score": 74,
+      "key_signal": "STUDENT_DATA_PRIVACY",
+      "is_icp": true
+    }
+  },
+  {
+    "id": "eval_018",
+    "name": "VentureFlow VC CRM",
+    "industry": "Fintech / SaaS",
+    "headcount": 95,
+    "cloud_environment": "GCP",
+    "tech_stack": ["GCP", "Next.js", "TypeScript", "PostgreSQL"],
+    "compliance_mandates": ["SOC 2 Type II", "GDPR"],
+    "engineering_growth_6m_pct": 24,
+    "security_headcount": 0,
+    "recent_triggers": "Launched LLM feature reading executive investor deal communications.",
+    "ground_truth": {
+      "tier": "TIER_1_CRITICAL",
+      "min_score": 82,
+      "max_score": 95,
+      "key_signal": "AI_DATA_INGESTION_RISK",
+      "is_icp": true
+    }
+  },
+  {
+    "id": "eval_019",
+    "name": "BioPharm Clinical Trials",
+    "industry": "Biotech",
+    "headcount": 135,
+    "cloud_environment": "AWS + Slurm HPC",
+    "tech_stack": ["AWS", "Slurm", "Python", "S3 Data Lake"],
+    "compliance_mandates": ["FDA 21 CFR Part 11", "ISO 27001"],
+    "engineering_growth_6m_pct": 18,
+    "security_headcount": 0,
+    "recent_triggers": "Initiated Phase II clinical trial data pipelines; high value patent data in S3.",
+    "ground_truth": {
+      "tier": "TIER_1_CRITICAL",
+      "min_score": 85,
+      "max_score": 98,
+      "key_signal": "IP_THEFT_TARGET",
+      "is_icp": true
+    }
+  },
+  {
+    "id": "eval_020",
+    "name": "FleetTrack Commercial Vehicles",
+    "industry": "Automotive IoT",
+    "headcount": 280,
+    "cloud_environment": "AWS (Kinesis, ECS)",
+    "tech_stack": ["AWS", "Kinesis", "Docker", "Python", "Go"],
+    "compliance_mandates": ["SOC 2 Type II", "ISO 27001"],
+    "engineering_growth_6m_pct": 32,
+    "security_headcount": 1,
+    "recent_triggers": "Managing live telemetry for 45,000 commercial delivery trucks.",
+    "ground_truth": {
+      "tier": "TIER_1_CRITICAL",
+      "min_score": 80,
+      "max_score": 95,
+      "key_signal": "MISSION_CRITICAL_TELEMATICS",
+      "is_icp": true
+    }
+  },
+  {
+    "id": "eval_021",
+    "name": "Joe's Family Plumbing",
+    "industry": "Residential Services",
+    "headcount": 14,
+    "cloud_environment": "None",
+    "tech_stack": ["Jobber", "QuickBooks Online"],
+    "compliance_mandates": [],
+    "engineering_growth_6m_pct": 0,
+    "security_headcount": 0,
+    "recent_triggers": "Bought 3 new repair vans.",
+    "ground_truth": {
+      "tier": "DISQUALIFIED",
+      "min_score": 0,
+      "max_score": 15,
+      "key_signal": "NON_TECH_BRICK_AND_MORTAR",
+      "is_icp": false
+    }
+  },
+  {
+    "id": "eval_022",
+    "name": "Kanga Logistics APAC",
+    "industry": "Freight Forwarding",
+    "headcount": 180,
+    "cloud_environment": "AWS (Sydney)",
+    "tech_stack": ["AWS", "Python", "PostgreSQL", "Docker"],
+    "compliance_mandates": ["SOC 2 Type II", "Customs Cyber Security Mandate"],
+    "engineering_growth_6m_pct": 27,
+    "security_headcount": 0,
+    "recent_triggers": "Customs integration API launching next month; cross-border freight manifest processing.",
+    "ground_truth": {
+      "tier": "TIER_1_CRITICAL",
+      "min_score": 80,
+      "max_score": 94,
+      "key_signal": "CROSS_BORDER_CUSTOMS_API",
+      "is_icp": true
+    }
+  },
+  {
+    "id": "eval_023",
+    "name": "CloudPrint 3D On-Demand",
+    "industry": "Advanced Manufacturing",
+    "headcount": 115,
+    "cloud_environment": "AWS",
+    "tech_stack": ["AWS", "Node.js", "React", "DynamoDB"],
+    "compliance_mandates": ["ISO 9001"],
+    "engineering_growth_6m_pct": 14,
+    "security_headcount": 0,
+    "recent_triggers": "3D CAD file upload portal for medical device prototypes.",
+    "ground_truth": {
+      "tier": "TIER_2_MODERATE",
+      "min_score": 62,
+      "max_score": 78,
+      "key_signal": "CAD_PROTOTYPE_IP",
+      "is_icp": true
+    }
+  },
+  {
+    "id": "eval_024",
+    "name": "Suburban Dental Clinic",
+    "industry": "Dental Practice",
+    "headcount": 18,
+    "cloud_environment": "None (Local NAS)",
+    "tech_stack": ["Dental4Windows", "Windows 10"],
+    "compliance_mandates": ["Privacy Act"],
+    "engineering_growth_6m_pct": 0,
+    "security_headcount": 0,
+    "recent_triggers": "Installed new digital dental X-ray machine.",
+    "ground_truth": {
+      "tier": "DISQUALIFIED",
+      "min_score": 0,
+      "max_score": 20,
+      "key_signal": "NON_TECH_BRICK_AND_MORTAR",
+      "is_icp": false
+    }
+  },
+  {
+    "id": "eval_025",
+    "name": "CryptoPay Gateway",
+    "industry": "Crypto & Web3 Payments",
+    "headcount": 85,
+    "cloud_environment": "AWS + Multi-Cloud GCP",
+    "tech_stack": ["AWS", "GCP", "Rust", "Go", "Solidity", "Kubernetes"],
+    "compliance_mandates": ["AUSTRAC AML/CTF", "SOC 2 Type II"],
+    "engineering_growth_6m_pct": 55,
+    "security_headcount": 0,
+    "recent_triggers": "Engineering team doubled in 6 months; launching non-custodial MPC wallet API; zero security hires.",
+    "ground_truth": {
+      "tier": "TIER_1_CRITICAL",
+      "min_score": 92,
+      "max_score": 100,
+      "key_signal": "HYPER_GROWTH_FINANCIAL_ASSETS",
+      "is_icp": true
+    }
+  }
+]

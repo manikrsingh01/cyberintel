@@ -1,0 +1,4 @@
+Write a cold email to the decision maker at {{name}} pitching our cybersecurity software.
+Make it sound persuasive and professional.
+Tell them we can secure their cloud and prevent attacks.
+Ask them for a 15 minute call next Tuesday.

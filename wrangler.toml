@@ -1,0 +1,8 @@
+name = "project-cyberintel"
+compatibility_date = "2024-09-23"
+compatibility_flags = ["nodejs_compat"]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "project-cyberintel-db"
+database_id = "bfb8deca-ef8a-48d4-905b-a39510d44b85"

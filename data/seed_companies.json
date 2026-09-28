@@ -1,0 +1,633 @@
+[
+  {
+    "id": "comp_001",
+    "name": "PayFlow Technologies",
+    "domain": "payflow.io",
+    "industry": "Fintech & Payments",
+    "headcount": 185,
+    "location": "Sydney, Australia",
+    "annual_revenue": "$28M",
+    "cloud_environment": "AWS (Multi-Region) + Kubernetes",
+    "tech_stack": ["AWS", "Kubernetes", "Node.js", "PostgreSQL", "Redis", "Kafka"],
+    "compliance_mandates": ["PCI-DSS Level 1", "SOC 2 Type II", "APRA CPS 234"],
+    "engineering_growth_6m_pct": 42,
+    "security_headcount": 0,
+    "recent_triggers": "Raised $18M Series B 3 months ago; expanding open banking API to 15 tier-2 banks; zero dedicated AppSec or CISO hires.",
+    "cyber_risk_score": 94,
+    "risk_tier": "TIER_1_CRITICAL",
+    "buying_signals": [
+      {
+        "type": "SECURITY_DEBT_DISPARITY",
+        "severity": "HIGH",
+        "headline": "42% Engineering Growth with 0 Security Staff",
+        "description": "Engineering team expanded from 30 to 52 devs in 6 months with no dedicated security engineers or CISO."
+      },
+      {
+        "type": "COMPLIANCE_DEADLINE",
+        "severity": "CRITICAL",
+        "headline": "APRA CPS 234 & PCI-DSS Compliance Audit Imminent",
+        "description": "Regulated Australian financial institution with upcoming CPS 234 information security compliance deadline."
+      },
+      {
+        "type": "API_EXPOSURE",
+        "severity": "HIGH",
+        "headline": "Open Banking API Surface Expansion",
+        "description": "Publicly launching new payment gateway APIs without automated endpoint threat protection."
+      }
+    ],
+    "target_buyer": {
+      "title": "VP of Engineering & Head of Infrastructure",
+      "pain_point": "Needs automated cloud security posture management and API protection before the banking regulator audit."
+    }
+  },
+  {
+    "id": "comp_002",
+    "name": "Nexus Health AI",
+    "domain": "nexushealth.ai",
+    "industry": "Digital Health / Healthcare",
+    "headcount": 120,
+    "location": "Melbourne, Australia",
+    "annual_revenue": "$14M",
+    "cloud_environment": "Google Cloud Platform (GCP) + BigQuery",
+    "tech_stack": ["GCP", "Python", "FastAPI", "React", "Docker", "BigQuery"],
+    "compliance_mandates": ["HIPAA", "Privacy Act (Australia)", "ISO 27001"],
+    "engineering_growth_6m_pct": 35,
+    "security_headcount": 0,
+    "recent_triggers": "Signed multi-hospital diagnostic imaging contract; ingesting patient health records (PHI) across 8 regional hospitals.",
+    "cyber_risk_score": 91,
+    "risk_tier": "TIER_1_CRITICAL",
+    "buying_signals": [
+      {
+        "type": "SENSITIVE_DATA_EXPOSURE",
+        "severity": "CRITICAL",
+        "headline": "Ingesting High-Volume Electronic Health Records (PHI)",
+        "description": "Processing sensitive patient imaging data across external healthcare networks without zero-trust identity isolation."
+      },
+      {
+        "type": "COMPLIANCE_DEADLINE",
+        "severity": "HIGH",
+        "headline": "Hospital Enterprise Vendor Security Assessment",
+        "description": "Hospital procurement requires proof of continuous SOC 2 and ISO 27001 compliance within 60 days."
+      }
+    ],
+    "target_buyer": {
+      "title": "Chief Technology Officer",
+      "pain_point": "Needs automated data-at-rest encryption monitoring and clinical cloud workload protection."
+    }
+  },
+  {
+    "id": "comp_003",
+    "name": "OmniRetail Direct",
+    "domain": "omniretail.com",
+    "industry": "E-Commerce & Retail",
+    "headcount": 410,
+    "location": "Austin, TX, USA",
+    "annual_revenue": "$85M",
+    "cloud_environment": "Hybrid (AWS + Legacy Magento/On-Prem)",
+    "tech_stack": ["AWS", "PHP/Magento", "Shopify Plus", "MySQL", "Cloudflare"],
+    "compliance_mandates": ["PCI-DSS Level 2", "CCPA", "GDPR"],
+    "engineering_growth_6m_pct": 12,
+    "security_headcount": 1,
+    "recent_triggers": "Holiday sales spike; suffered distributed bot credential stuffing attack on checkout endpoints 3 weeks ago.",
+    "cyber_risk_score": 88,
+    "risk_tier": "TIER_1_CRITICAL",
+    "buying_signals": [
+      {
+        "type": "ACTIVE_THREAT_TRIGGER",
+        "severity": "CRITICAL",
+        "headline": "Recent Credential Stuffing & Bot Attack on Checkout",
+        "description": "Targeted by sophisticated account takeover attempts against customer login and gift card balances."
+      },
+      {
+        "type": "HYBRID_LEGACY_RISK",
+        "severity": "HIGH",
+        "headline": "Legacy Monolith Hybrid Infrastructure",
+        "description": "Mix of modern cloud microservices and legacy on-prem payment databases creates unpatched visibility gaps."
+      }
+    ],
+    "target_buyer": {
+      "title": "Director of Information Security",
+      "pain_point": "Lone security manager overwhelmed by bot traffic and needs automated bot mitigation and WAF defense."
+    }
+  },
+  {
+    "id": "comp_004",
+    "name": "CloudScale Logistics",
+    "domain": "cloudscalelogistics.com",
+    "industry": "Logistics & Supply Chain",
+    "headcount": 320,
+    "location": "Chicago, IL, USA",
+    "annual_revenue": "$62M",
+    "cloud_environment": "Microsoft Azure + On-prem Warehouse IoT",
+    "tech_stack": ["Azure", ".NET Core", "C#", "Azure IoT Hub", "SQL Server"],
+    "compliance_mandates": ["SOC 2 Type II", "ISO 27001"],
+    "engineering_growth_6m_pct": 28,
+    "security_headcount": 1,
+    "recent_triggers": "Connected 1,200 automated warehouse barcode scanners and IoT sensors directly to central Azure telemetry.",
+    "cyber_risk_score": 82,
+    "risk_tier": "TIER_1_CRITICAL",
+    "buying_signals": [
+      {
+        "type": "IOT_ATTACK_SURFACE",
+        "severity": "HIGH",
+        "headline": "1,200 Unmanaged Edge IoT Warehouse Devices",
+        "description": "Rapid rollout of connected supply-chain hardware without endpoint microsegmentation."
+      },
+      {
+        "type": "SUPPLY_CHAIN_SCRUTINY",
+        "severity": "HIGH",
+        "headline": "Enterprise Logistics Customer Audit Requirements",
+        "description": "Fortune 500 retail clients demanding third-party supply chain cyber risk attestation."
+      }
+    ],
+    "target_buyer": {
+      "title": "VP of Infrastructure & IT Operations",
+      "pain_point": "Needs visibility into unauthorized IoT device communications and lateral movement detection."
+    }
+  },
+  {
+    "id": "comp_005",
+    "name": "FinEdge Wealth",
+    "domain": "finedgewealth.com.au",
+    "industry": "Wealth Management & Advisory",
+    "headcount": 95,
+    "location": "Brisbane, Australia",
+    "annual_revenue": "$19M",
+    "cloud_environment": "AWS + Microsoft 365 Enterprise",
+    "tech_stack": ["AWS", "Salesforce", "Python", "PostgreSQL", "Okta"],
+    "compliance_mandates": ["ASIC Regulatory Guide 271", "SOC 2"],
+    "engineering_growth_6m_pct": 25,
+    "security_headcount": 0,
+    "recent_triggers": "High Net Worth client portal launched; managing $1.2B in advisory assets; recently switched to full remote workforce.",
+    "cyber_risk_score": 85,
+    "risk_tier": "TIER_1_CRITICAL",
+    "buying_signals": [
+      {
+        "type": "HIGH_VALUE_TARGET",
+        "severity": "HIGH",
+        "headline": "$1.2B in Advisory Client Assets Managed Remotely",
+        "description": "Advisors handling wire transfers and confidential portfolios from distributed remote endpoints."
+      },
+      {
+        "type": "ZERO_DEDICATED_SECURITY",
+        "severity": "HIGH",
+        "headline": "No Dedicated Security or Compliance Personnel",
+        "description": "IT operations handled by outsourced generalist MSP without dedicated 24/7 SIEM/SOC coverage."
+      }
+    ],
+    "target_buyer": {
+      "title": "Managing Director & Chief Operating Officer",
+      "pain_point": "Worried about email spear-phishing wire fraud and lacks real-time endpoint threat detection."
+    }
+  },
+  {
+    "id": "comp_006",
+    "name": "SentryGov Solutions",
+    "domain": "sentrygov.com",
+    "industry": "GovTech / Public Sector SaaS",
+    "headcount": 210,
+    "location": "Canberra, Australia",
+    "annual_revenue": "$34M",
+    "cloud_environment": "AWS GovCloud (Australia) Protected Enclave",
+    "tech_stack": ["AWS GovCloud", "TypeScript", "React", "PostgreSQL", "Terraform"],
+    "compliance_mandates": ["IRAP PROTECTED", "Essential Eight Maturity Level 3"],
+    "engineering_growth_6m_pct": 18,
+    "security_headcount": 2,
+    "recent_triggers": "Bidding for federal department identity modernization tender; must certify Essential Eight Level 3 within 4 months.",
+    "cyber_risk_score": 78,
+    "risk_tier": "TIER_2_MODERATE",
+    "buying_signals": [
+      {
+        "type": "GOV_COMPLIANCE_MANDATE",
+        "severity": "HIGH",
+        "headline": "Essential Eight Level 3 Certification Gap",
+        "description": "Current patching and application control mechanisms do not meet the Australian Cyber Security Centre (ACSC) mandate."
+      }
+    ],
+    "target_buyer": {
+      "title": "Head of Cyber Security & Compliance",
+      "pain_point": "Needs automated evidence collection for Australian Government IRAP audit."
+    }
+  },
+  {
+    "id": "comp_007",
+    "name": "Beacon InsurTech",
+    "domain": "beaconinsure.io",
+    "industry": "InsurTech",
+    "headcount": 140,
+    "location": "New York, NY, USA",
+    "annual_revenue": "$22M",
+    "cloud_environment": "AWS Serverless (Lambda, DynamoDB)",
+    "tech_stack": ["AWS Lambda", "DynamoDB", "Node.js", "Serverless Framework", "Auth0"],
+    "compliance_mandates": ["NYDFS Cybersecurity Regulation", "SOC 2 Type II"],
+    "engineering_growth_6m_pct": 30,
+    "security_headcount": 0,
+    "recent_triggers": "State insurance commissioner annual audit scheduled for Q4; 100% serverless event-driven architecture.",
+    "cyber_risk_score": 76,
+    "risk_tier": "TIER_2_MODERATE",
+    "buying_signals": [
+      {
+        "type": "REGULATORY_AUDIT",
+        "severity": "HIGH",
+        "headline": "NYDFS 23 NYCRR 500 Compliance Deadline",
+        "description": "Mandatory annual cybersecurity compliance certification due under strict New York state regulations."
+      },
+      {
+        "type": "SERVERLESS_SECURITY_BLINDSPOT",
+        "severity": "MEDIUM",
+        "headline": "Serverless Permission Over-Privilege",
+        "description": "Over 200 AWS Lambda functions sharing overly broad IAM roles."
+      }
+    ],
+    "target_buyer": {
+      "title": "VP of Technology",
+      "pain_point": "Needs automated serverless posture scanning and least-privilege IAM enforcement."
+    }
+  },
+  {
+    "id": "comp_008",
+    "name": "TalentWave HR",
+    "domain": "talentwave.io",
+    "industry": "HRTech & Workforce SaaS",
+    "headcount": 280,
+    "location": "San Francisco, CA, USA",
+    "annual_revenue": "$42M",
+    "cloud_environment": "AWS + Kubernetes",
+    "tech_stack": ["AWS", "EKS", "Ruby on Rails", "React", "Snowflake", "Datadog"],
+    "compliance_mandates": ["SOC 2 Type II", "GDPR", "CCPA"],
+    "engineering_growth_6m_pct": 15,
+    "security_headcount": 1,
+    "recent_triggers": "Upmarket enterprise move: Fortune 500 customers demanding custom enterprise security questionnaires and pen test results.",
+    "cyber_risk_score": 72,
+    "risk_tier": "TIER_2_MODERATE",
+    "buying_signals": [
+      {
+        "type": "ENTERPRISE_DEAL_BLOCKER",
+        "severity": "HIGH",
+        "headline": "Security Review Delaying 4 Multi-Year Enterprise Deals",
+        "description": "Prospective enterprise clients stalling procurement over vendor risk assessments and annual pentest certificates."
+      }
+    ],
+    "target_buyer": {
+      "title": "Chief Information Officer",
+      "pain_point": "Needs continuous vulnerability scanning and customer-ready security trust center documentation."
+    }
+  },
+  {
+    "id": "comp_009",
+    "name": "AeroParts Global",
+    "domain": "aeropartsglobal.com",
+    "industry": "Aerospace & Defense Manufacturing",
+    "headcount": 550,
+    "location": "Melbourne, Australia",
+    "annual_revenue": "$110M",
+    "cloud_environment": "Private Cloud + Hybrid Azure",
+    "tech_stack": ["Azure", "Windows Server", "SAP ERP", "Cisco Hardware Firewalls"],
+    "compliance_mandates": ["DISP (Defence Industry Security Program)", "NIST 800-171"],
+    "engineering_growth_6m_pct": 8,
+    "security_headcount": 2,
+    "recent_triggers": "Subcontracted for Tier-1 defense aviation manufacturing; mandated DISP accreditation check.",
+    "cyber_risk_score": 75,
+    "risk_tier": "TIER_2_MODERATE",
+    "buying_signals": [
+      {
+        "type": "DEFENSE_SUPPLY_CHAIN",
+        "severity": "HIGH",
+        "headline": "Australian Defence DISP Level 2 Accreditation",
+        "description": "Required to demonstrate physical and cyber threat isolation for classified IP blueprints."
+      }
+    ],
+    "target_buyer": {
+      "title": "Chief Information Security Officer",
+      "pain_point": "Needs operational technology (OT) and CAD workstation telemetry to stop espionage threats."
+    }
+  },
+  {
+    "id": "comp_010",
+    "name": "HyperCart QuickCommerce",
+    "domain": "hypercart.app",
+    "industry": "Quick Commerce / Food Delivery",
+    "headcount": 190,
+    "location": "Sydney, Australia",
+    "annual_revenue": "$31M",
+    "cloud_environment": "GCP + Firebase",
+    "tech_stack": ["GCP", "Firebase", "Flutter", "Node.js", "Stripe"],
+    "compliance_mandates": ["PCI-DSS Level 3", "Privacy Act"],
+    "engineering_growth_6m_pct": 20,
+    "security_headcount": 0,
+    "recent_triggers": "Mobile app downloads passed 1.5 million users; storing delivery location history and rider telemetry.",
+    "cyber_risk_score": 68,
+    "risk_tier": "TIER_2_MODERATE",
+    "buying_signals": [
+      {
+        "type": "MOBILE_GEO_PRIVACY",
+        "severity": "MEDIUM",
+        "headline": "High-Volume Consumer Geolocation Tracking",
+        "description": "Sensitive real-time location database managed on Firebase without fine-grained IAM guardrails."
+      }
+    ],
+    "target_buyer": {
+      "title": "VP of Product & Engineering",
+      "pain_point": "Needs automated cloud security posture management to ensure mobile API keys aren't exposed in client bundles."
+    }
+  },
+  {
+    "id": "comp_011",
+    "name": "Acme Local Bakery Chain",
+    "domain": "acmebakery.com.au",
+    "industry": "Food & Beverage (Local Retail)",
+    "headcount": 45,
+    "location": "Adelaide, Australia",
+    "annual_revenue": "$4.5M",
+    "cloud_environment": "None (Square POS SaaS)",
+    "tech_stack": ["Square POS", "WordPress", "WooCommerce", "Gmail"],
+    "compliance_mandates": ["Basic PCI (handled by Square)"],
+    "engineering_growth_6m_pct": 0,
+    "security_headcount": 0,
+    "recent_triggers": "Opened 2 new franchise storefronts in suburbs.",
+    "cyber_risk_score": 12,
+    "risk_tier": "DISQUALIFIED",
+    "buying_signals": [],
+    "target_buyer": {
+      "title": "Owner / General Manager",
+      "pain_point": "Does not own software infrastructure; all security is handled by SaaS vendors (Square/Shopify). Non-ICP."
+    }
+  },
+  {
+    "id": "comp_012",
+    "name": "SecureBank Corporation",
+    "domain": "securebankcorp.com",
+    "industry": "Commercial Banking",
+    "headcount": 14500,
+    "location": "Sydney, Australia",
+    "annual_revenue": "$3.8B",
+    "cloud_environment": "Private Cloud + Hybrid AWS",
+    "tech_stack": ["Mainframe", "IBM WebSphere", "AWS", "Splunk", "CrowdStrike", "Palo Alto", "CyberArk"],
+    "compliance_mandates": ["APRA CPS 234", "PCI-DSS Level 1", "SOC 2 Type II", "ISO 27001"],
+    "engineering_growth_6m_pct": 4,
+    "security_headcount": 120,
+    "recent_triggers": "Published annual ESG and Cyber Defense report.",
+    "cyber_risk_score": 22,
+    "risk_tier": "DISQUALIFIED",
+    "buying_signals": [],
+    "target_buyer": {
+      "title": "Global Chief Information Security Officer",
+      "pain_point": "Massive 120+ person in-house cybersecurity division with deeply entrenched enterprise tooling contracts (CrowdStrike, Palo Alto). Too large and rigid for mid-market cybersecurity software."
+    }
+  },
+  {
+    "id": "comp_013",
+    "name": "Apex Cleaners & Maintenance",
+    "domain": "apexcleaners.com.au",
+    "industry": "Facilities & Cleaning Services",
+    "headcount": 65,
+    "location": "Perth, Australia",
+    "annual_revenue": "$7.2M",
+    "cloud_environment": "None (Microsoft 365 Standard)",
+    "tech_stack": ["Microsoft 365", "Xero", "Wix"],
+    "compliance_mandates": ["None"],
+    "engineering_growth_6m_pct": 0,
+    "security_headcount": 0,
+    "recent_triggers": "Upgraded company staff smartphones to iPhone 15.",
+    "cyber_risk_score": 8,
+    "risk_tier": "DISQUALIFIED",
+    "buying_signals": [],
+    "target_buyer": {
+      "title": "Managing Director",
+      "pain_point": "Zero proprietary software, zero cloud infrastructure, no compliance regulations. Out of ICP."
+    }
+  },
+  {
+    "id": "comp_014",
+    "name": "DataVault Legal Tech",
+    "domain": "datavaultlegal.io",
+    "industry": "LegalTech / E-Discovery SaaS",
+    "headcount": 160,
+    "location": "Sydney, Australia",
+    "annual_revenue": "$26M",
+    "cloud_environment": "AWS (Sydney Region)",
+    "tech_stack": ["AWS", "OpenSearch", "Python", "React", "PostgreSQL", "Docker"],
+    "compliance_mandates": ["ISO 27001", "SOC 2 Type II", "Privacy Act"],
+    "engineering_growth_6m_pct": 38,
+    "security_headcount": 0,
+    "recent_triggers": "Onboarding 4 top-tier international corporate law firms storing confidential litigation briefs and M&A diligence docs.",
+    "cyber_risk_score": 93,
+    "risk_tier": "TIER_1_CRITICAL",
+    "buying_signals": [
+      {
+        "type": "PRIVILEGED_DATA_SCRUTINY",
+        "severity": "CRITICAL",
+        "headline": "Storing Confidential Legal Litigation & M&A Data",
+        "description": "High-risk target for corporate espionage; Law firm clients demand ISO 27001 attestation and continuous penetration testing."
+      },
+      {
+        "type": "ENGINEERING_SPIKE_NO_SEC",
+        "severity": "HIGH",
+        "headline": "Engineering Team Scaled by 38% with No SecOps",
+        "description": "Feature releases deployed twice weekly without automated static analysis (SAST) or container vulnerability checks."
+      }
+    ],
+    "target_buyer": {
+      "title": "Chief Technology Officer & Co-Founder",
+      "pain_point": "Needs automated cloud workload protection to satisfy rigorous law firm procurement security questionnaires."
+    }
+  },
+  {
+    "id": "comp_015",
+    "name": "GreenGrid Energy IoT",
+    "domain": "greengrid.energy",
+    "industry": "CleanTech / Smart Grid",
+    "headcount": 220,
+    "location": "Melbourne, Australia",
+    "annual_revenue": "$39M",
+    "cloud_environment": "AWS + Industrial Scada IoT",
+    "tech_stack": ["AWS IoT Core", "Go", "TimescaleDB", "React", "Terraform"],
+    "compliance_mandates": ["SOCI Act (Security of Critical Infrastructure)", "ISO 27001"],
+    "engineering_growth_6m_pct": 29,
+    "security_headcount": 1,
+    "recent_triggers": "Designated under Australian Security of Critical Infrastructure (SOCI Act); mandatory incident reporting and risk management plan required.",
+    "cyber_risk_score": 96,
+    "risk_tier": "TIER_1_CRITICAL",
+    "buying_signals": [
+      {
+        "type": "CRITICAL_INFRASTRUCTURE_REGULATION",
+        "severity": "CRITICAL",
+        "headline": "Covered by Australian Critical Infrastructure (SOCI) Mandate",
+        "description": "Federal government cyber security mandates require rigorous operational technology (OT) monitoring and incident reporting."
+      },
+      {
+        "type": "SMART_METER_IOT_SURFACE",
+        "severity": "HIGH",
+        "headline": "50,000 Connected Solar & Battery Inverters",
+        "description": "Large fleet of distributed IoT endpoints connecting back to cloud telemetry backend."
+      }
+    ],
+    "target_buyer": {
+      "title": "Head of Engineering & Infrastructure",
+      "pain_point": "Needs continuous compliance auditing against SOCI Act requirements and IoT anomaly detection."
+    }
+  },
+  {
+    "id": "comp_016",
+    "name": "EduSphere LMS",
+    "domain": "edusphere.co",
+    "industry": "EdTech & Higher Ed SaaS",
+    "headcount": 175,
+    "location": "Brisbane, Australia",
+    "annual_revenue": "$24M",
+    "cloud_environment": "AWS + Kubernetes",
+    "tech_stack": ["AWS", "EKS", "Node.js", "MongoDB", "Redis"],
+    "compliance_mandates": ["FERPA", "SOC 2 Type II", "Privacy Act"],
+    "engineering_growth_6m_pct": 14,
+    "security_headcount": 0,
+    "recent_triggers": "Contracted with 6 state university systems; managing student demographic, grade, and financial aid records.",
+    "cyber_risk_score": 64,
+    "risk_tier": "TIER_2_MODERATE",
+    "buying_signals": [
+      {
+        "type": "STUDENT_DATA_PRIVACY",
+        "severity": "MEDIUM",
+        "headline": "Managing 400,000 Student Records without In-House Security",
+        "description": "Universities demanding annual SOC 2 renewal and data residency verification."
+      }
+    ],
+    "target_buyer": {
+      "title": "VP of Technology",
+      "pain_point": "Needs hands-off, automated SOC 2 compliance monitoring without hiring a full security team."
+    }
+  },
+  {
+    "id": "comp_017",
+    "name": "VentureFlow CRM",
+    "domain": "ventureflow.com",
+    "industry": "Enterprise SaaS",
+    "headcount": 90,
+    "location": "San Francisco, CA, USA",
+    "annual_revenue": "$16M",
+    "cloud_environment": "Google Cloud Platform (GCP)",
+    "tech_stack": ["GCP", "Cloud Run", "TypeScript", "Next.js", "PostgreSQL"],
+    "compliance_mandates": ["SOC 2 Type II", "GDPR"],
+    "engineering_growth_6m_pct": 22,
+    "security_headcount": 0,
+    "recent_triggers": "Launched AI deal copilot that reads email communications for venture capital investors.",
+    "cyber_risk_score": 86,
+    "risk_tier": "TIER_1_CRITICAL",
+    "buying_signals": [
+      {
+        "type": "AI_DATA_INGESTION_RISK",
+        "severity": "HIGH",
+        "headline": "AI Features Processing Sensitive Corporate Email Metadata",
+        "description": "Passing executive email communications through third-party LLM endpoints without data loss prevention (DLP) guardrails."
+      },
+      {
+        "type": "SOC_2_AUDIT_WINDOW",
+        "severity": "HIGH",
+        "headline": "SOC 2 Type II Annual Observation Period",
+        "description": "Audit period closes in 60 days; needs to demonstrate zero critical unpatched CVEs in production."
+      }
+    ],
+    "target_buyer": {
+      "title": "CTO & Co-Founder",
+      "pain_point": "Needs AI data privacy guardrails and automated CVE scanning across containerized microservices."
+    }
+  },
+  {
+    "id": "comp_018",
+    "name": "BioPharm Research Lab",
+    "domain": "biopharmresearch.com.au",
+    "industry": "Biotech & Clinical Trials",
+    "headcount": 130,
+    "location": "Melbourne, Australia",
+    "annual_revenue": "$27M",
+    "cloud_environment": "AWS + High Performance Compute (HPC)",
+    "tech_stack": ["AWS", "Slurm HPC", "Python", "Docker", "S3 Data Lake"],
+    "compliance_mandates": ["FDA 21 CFR Part 11", "ISO 27001", "TGA Regulations"],
+    "engineering_growth_6m_pct": 19,
+    "security_headcount": 0,
+    "recent_triggers": "Commenced Phase II oncology clinical trial data pipeline; multi-million dollar patent research stored in S3.",
+    "cyber_risk_score": 89,
+    "risk_tier": "TIER_1_CRITICAL",
+    "buying_signals": [
+      {
+        "type": "IP_THEFT_TARGET",
+        "severity": "CRITICAL",
+        "headline": "Proprietary Pharmaceutical Formulation IP in Cloud Storage",
+        "description": "Millions of dollars in research data stored in AWS S3 buckets without automated data classification or leak detection."
+      },
+      {
+        "type": "CLINICAL_REGULATION",
+        "severity": "HIGH",
+        "headline": "FDA / TGA Data Integrity Audit Compliance",
+        "description": "Strict regulatory requirement for immutable audit logs and tamper-proof access controls."
+      }
+    ],
+    "target_buyer": {
+      "title": "Head of Informatics & Infrastructure",
+      "pain_point": "Needs automated cloud data loss prevention (DLP) and immutable audit log enforcement."
+    }
+  },
+  {
+    "id": "comp_019",
+    "name": "UrbanBite Cloud Kitchens",
+    "domain": "urbanbite.com.au",
+    "industry": "FoodTech & Hospitality",
+    "headcount": 115,
+    "location": "Sydney, Australia",
+    "annual_revenue": "$18M",
+    "cloud_environment": "AWS Lightsail & Heroku",
+    "tech_stack": ["Heroku", "Node.js", "PostgreSQL", "Shopify"],
+    "compliance_mandates": ["Basic PCI"],
+    "engineering_growth_6m_pct": 5,
+    "security_headcount": 0,
+    "recent_triggers": "Steady operations across 12 commercial kitchens; no major infrastructure changes in past 12 months.",
+    "cyber_risk_score": 38,
+    "risk_tier": "TIER_3_LOW",
+    "buying_signals": [
+      {
+        "type": "STATIC_FOOTPRINT",
+        "severity": "LOW",
+        "headline": "Simple Monolithic Cloud Footprint",
+        "description": "Relatively low cyber complexity and minimal attack surface beyond standard SaaS POS."
+      }
+    ],
+    "target_buyer": {
+      "title": "Head of IT",
+      "pain_point": "Standard endpoint protection suffices; low urgency for enterprise cyber software."
+    }
+  },
+  {
+    "id": "comp_020",
+    "name": "FleetTrack Telematics",
+    "domain": "fleettrack.io",
+    "industry": "Automotive IoT / Telematics",
+    "headcount": 270,
+    "location": "Austin, TX, USA",
+    "annual_revenue": "$51M",
+    "cloud_environment": "AWS (Kinesis, ECS, DynamoDB)",
+    "tech_stack": ["AWS", "Kinesis", "Docker", "Python", "Go", "Grafana"],
+    "compliance_mandates": ["SOC 2 Type II", "ISO 27001", "DOT Compliance"],
+    "engineering_growth_6m_pct": 31,
+    "security_headcount": 1,
+    "recent_triggers": "Installed real-time OBD-II vehicle tracking dongles across 45,000 commercial delivery trucks.",
+    "cyber_risk_score": 84,
+    "risk_tier": "TIER_1_CRITICAL",
+    "buying_signals": [
+      {
+        "type": "MISSION_CRITICAL_TELEMATICS",
+        "severity": "HIGH",
+        "headline": "Real-Time Telemetry Stream for 45,000 Commercial Trucks",
+        "description": "High-throughput streaming ingestion susceptible to denial-of-service and man-in-the-middle tampering."
+      },
+      {
+        "type": "RAPID_HARDWARE_FLEET_GROWTH",
+        "severity": "HIGH",
+        "headline": "Fast Fleet Scaling with Understaffed Security",
+        "description": "1 security engineer overseeing hundreds of thousands of active vehicle API connections."
+      }
+    ],
+    "target_buyer": {
+      "title": "VP of Engineering & Connected Vehicles",
+      "pain_point": "Needs real-time API threat intelligence and zero-trust authentication for in-vehicle firmware."
+    }
+  }
+]

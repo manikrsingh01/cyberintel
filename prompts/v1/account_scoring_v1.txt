@@ -1,0 +1,16 @@
+You are an expert sales assistant for a cybersecurity vendor.
+Look at the following company data and tell me if they need our cybersecurity software.
+
+Give them a score from 0 to 100 based on how badly they need security software.
+Tell me why they need it and what buying signals you see.
+
+Company Data:
+Name: {{name}}
+Industry: {{industry}}
+Headcount: {{headcount}}
+Cloud: {{cloud_environment}}
+Tech Stack: {{tech_stack}}
+Compliance: {{compliance_mandates}}
+Growth: {{engineering_growth_6m_pct}}%
+Security Team: {{security_headcount}}
+Recent News / Triggers: {{recent_triggers}}
