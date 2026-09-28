@@ -30,3 +30,7 @@ yarn-error.log*
 .wrangler/
 .open-next/
 .vercel/
+
+# Agent & AI IDE Internal
+.agent/
+.gemini/
