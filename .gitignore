@@ -33,4 +33,5 @@ yarn-error.log*
 
 # Agent & AI IDE Internal
 .agent/
+.agents
 .gemini/
