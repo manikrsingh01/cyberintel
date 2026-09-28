@@ -2,6 +2,8 @@ import { NextResponse } from "next/server";
 import { generateOutreach } from "@/lib/scoring";
 import { Company } from "@/lib/types";
 
+export const runtime = 'edge';
+
 export async function POST(req: Request) {
   try {
     const { company, tone } = await req.json();

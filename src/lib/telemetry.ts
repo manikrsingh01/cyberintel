@@ -58,27 +58,27 @@ export function logTrace(trace: Omit<TelemetryTrace, "id" | "timestamp">): Telem
     tracesStore.pop();
   }
 
-  // Attempt to append to data/traces.jsonl on server side
+  // Attempt to append to data/traces.jsonl on server side (Node.js runtime)
   try {
-    if (typeof window === "undefined") {
-      const fs = require("fs");
-      const path = require("path");
+    if (typeof window === "undefined" && process.env.NEXT_RUNTIME !== "edge") {
+      const fs = eval("require")("fs");
+      const path = eval("require")("path");
       const logFile = path.join(process.cwd(), "data", "traces.jsonl");
       fs.appendFileSync(logFile, JSON.stringify(newTrace) + "\n", "utf8");
     }
   } catch (err) {
-    // Non-fatal if fs unavailable in certain edge contexts
+    // Non-fatal if fs unavailable in edge/serverless contexts
   }
 
   return newTrace;
 }
 
 export function getTraces(): TelemetryTrace[] {
-  // Read persistent traces from data/traces.jsonl if on server
+  // Read persistent traces from data/traces.jsonl if on Node server
   try {
-    if (typeof window === "undefined") {
-      const fs = require("fs");
-      const path = require("path");
+    if (typeof window === "undefined" && process.env.NEXT_RUNTIME !== "edge") {
+      const fs = eval("require")("fs");
+      const path = eval("require")("path");
       const logFile = path.join(process.cwd(), "data", "traces.jsonl");
       if (fs.existsSync(logFile)) {
         const content = fs.readFileSync(logFile, "utf8");

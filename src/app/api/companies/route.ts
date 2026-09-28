@@ -3,6 +3,8 @@ import { initialCompanies } from "@/lib/mockData";
 import { scoreCompanyHybrid } from "@/lib/scoring";
 import { Company } from "@/lib/types";
 
+export const runtime = 'edge';
+
 let companiesList: Company[] = [...initialCompanies];
 
 export async function GET() {

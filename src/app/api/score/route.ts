@@ -2,6 +2,8 @@ import { NextResponse } from "next/server";
 import { scoreCompanyHybrid } from "@/lib/scoring";
 import { logTrace, calculateCost } from "@/lib/telemetry";
 
+export const runtime = 'edge';
+
 export async function POST(req: Request) {
   try {
     const rawCompany = await req.json();

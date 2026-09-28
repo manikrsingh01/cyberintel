@@ -5,8 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "build:cloudflare": "opennextjs-cloudflare",
-    "deploy:cloudflare": "opennextjs-cloudflare && wrangler pages deploy --project-name=project-cyberintel",
+    "build:cloudflare": "next-on-pages",
+    "deploy:cloudflare": "next-on-pages && wrangler pages deploy .vercel/output/static --project-name=project-cyberintel",
     "start": "next start",
     "lint": "next lint",
     "eval": "python3 evals/eval_harness.py"

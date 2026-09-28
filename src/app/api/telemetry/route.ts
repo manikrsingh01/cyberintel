@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getTraces, getTelemetryStats, logTrace } from "@/lib/telemetry";
 
+export const runtime = 'edge';
+
 export async function GET() {
   try {
     const traces = getTraces();
