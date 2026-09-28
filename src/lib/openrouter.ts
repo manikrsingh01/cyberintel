@@ -1,6 +1,7 @@
-import { Company, OutreachDraft, RiskTier } from "./types";
+import { Company, OutreachDraft, RiskTier, TelemetryTrace } from "./types";
 import { generateOutreach, scoreCompanyHybrid } from "./scoring";
 import { logTrace } from "./telemetry";
+import { getD1, saveTraceToD1 } from "./db";
 
 const OPENROUTER_API_URL = "https://openrouter.ai/api/v1/chat/completions";
 const DEFAULT_MODEL = process.env.OPENROUTER_MODEL || "openai/gpt-4o-mini";
@@ -144,7 +145,7 @@ export async function generateLiveOutreach(
   company: Company,
   tone: "sdr_direct" | "executive_vp" = "sdr_direct",
   customInstruction?: string
-): Promise<{ draft: OutreachDraft; telemetry: TelemetryResult }> {
+): Promise<{ draft: OutreachDraft; telemetry: TelemetryResult; trace?: TelemetryTrace }> {
   try {
     const toneInstructions = tone === "sdr_direct"
       ? `Tone: DIRECT & TECHNICAL (Peer-to-peer SDR for Engineering Leaders).
@@ -156,6 +157,14 @@ Focus on: Material business risk, imminent audit deadlines (SOC 2, HIPAA, APRA C
       ? `\n### USER SPECIFIC CUSTOMIZATION INSTRUCTION:\nThe user requested: "${customInstruction.trim()}". You MUST strictly follow this guidance in the drafted copy.\n`
       : "";
 
+    const cloudEnv = company.cloud_environment || "AWS / Kubernetes";
+    const compMandates = Array.isArray(company.compliance_mandates) ? company.compliance_mandates.join(", ") : "SOC 2, ISO 27001";
+    const targetTitle = company.target_buyer?.title || "VP of Engineering";
+    const targetPain = company.target_buyer?.pain_point || "Imminent compliance deadline and engineering alert fatigue";
+    const signalsSummary = Array.isArray(company.buying_signals) && company.buying_signals.length > 0
+      ? company.buying_signals.map(s => s.headline || s.description || "").filter(Boolean).join("; ")
+      : "Active engineering scaling";
+
     const prompt = `You are an elite B2B cybersecurity sales strategist and executive copywriter.
 
 ### MISSION
@@ -165,7 +174,7 @@ ${toneInstructions}
 ${customizationBlock}
 ### HARD CONSTRAINTS
 1. Never use generic buzzwords ("game-changer", "revolutionary", "hope this email finds you well", "synergy").
-2. Anchor to Real Signals: Reference their specific cloud stack (${company.cloud_environment}), dev growth (+${company.engineering_growth_6m_pct}%), compliance mandates (${company.compliance_mandates.join(", ") || "upcoming SOC 2"}), and security team size (${company.security_headcount} dedicated staff).
+2. Anchor to Real Signals: Reference their specific cloud stack (${cloudEnv}), dev growth (+${company.engineering_growth_6m_pct || 25}%), compliance mandates (${compMandates}), and security team size (${company.security_headcount ?? 0} dedicated staff).
 3. Low-friction interest CTA (e.g., "Open to seeing a 2-min breakdown of how peer teams handled this?").
 4. Output ONLY valid JSON:
 {
@@ -181,10 +190,10 @@ ${customizationBlock}
 
 ### TARGET COMPANY DOSSIER:
 - Name: ${company.name}
-- Buyer Persona: ${company.target_buyer.title}
-- Pain Point: ${company.target_buyer.pain_point}
-- Triggers: ${company.recent_triggers}
-- Top Signals: ${company.buying_signals.map(s => s.headline).join("; ")}
+- Buyer Persona: ${targetTitle}
+- Pain Point: ${targetPain}
+- Triggers: ${company.recent_triggers || "Scaling cloud infrastructure"}
+- Top Signals: ${signalsSummary}
 - Security Debt Ratio: ${company.security_debt_ratio ? `${company.security_debt_ratio}x Debt (Eng Growth vs 0 SecOps)` : "Acute"}
 - Urgency Window: ${company.audit_countdown_label || "Upcoming audit review"}
 - Tactical Counter Hook: ${company.sales_battlecard?.counter_hook || "Automate continuous evidence collection without developer friction"}`;
@@ -193,7 +202,7 @@ ${customizationBlock}
     const parsed = safeJsonParse(rawContent);
 
     // Record live real-time trace into telemetry store
-    logTrace({
+    const newTrace = logTrace({
       feature: "outreach_generation",
       model: telemetry.model,
       prompt_version: "v2",
@@ -206,7 +215,17 @@ ${customizationBlock}
       cached: false,
     });
 
-    const fallbackInmail = `Saw ${company.name}'s engineering team scaling rapidly on ${company.cloud_environment.split(" ")[0]}. How are you handling automated compliance evidence ahead of audits without dedicating SecOps staff? Open to a 2-min peer breakdown?`;
+    // Save directly into Cloudflare D1 if available
+    try {
+      const db = getD1();
+      if (db) {
+        await saveTraceToD1(db, newTrace);
+      }
+    } catch (e) {
+      console.warn("Failed saving trace to D1 in generateLiveOutreach:", e);
+    }
+
+    const fallbackInmail = `Saw ${company.name}'s engineering team scaling rapidly on ${cloudEnv.split(" ")[0]}. How are you handling automated compliance evidence ahead of audits without dedicating SecOps staff? Open to a 2-min peer breakdown?`;
 
     return {
       draft: {
@@ -220,9 +239,10 @@ ${customizationBlock}
             : fallbackInmail,
         },
         sales_angle: parsed?.sales_angle || "Targeted based on rapid engineering scaling and compliance deadlines.",
-        persona_targeted: company.target_buyer.title,
+        persona_targeted: targetTitle,
       },
       telemetry,
+      trace: newTrace,
     };
   } catch (err) {
     console.warn("Falling back to local heuristic outreach generator:", err);
@@ -246,7 +266,7 @@ ${customizationBlock}
  */
 export async function scoreLiveAccount(
   raw: Partial<Company>
-): Promise<{ company: Company; telemetry: TelemetryResult }> {
+): Promise<{ company: Company; telemetry: TelemetryResult; trace?: TelemetryTrace }> {
   try {
     const prompt = `You are an AI-Native B2B Sales Intelligence Scoring Engine for an enterprise cybersecurity vendor selling cloud posture and continuous compliance automation.
 
@@ -294,7 +314,7 @@ Evaluate target company against strict Ideal Customer Profile (ICP) criteria. Ou
     const parsed = safeJsonParse(rawContent);
 
     // Record live real-time trace into telemetry store
-    logTrace({
+    const newTrace = logTrace({
       feature: "account_scoring",
       model: telemetry.model,
       prompt_version: "v2",
@@ -306,6 +326,16 @@ Evaluate target company against strict Ideal Customer Profile (ICP) criteria. Ou
       decision_summary: `Scored ${parsed.cyber_risk_score || 85}/100 (${parsed.risk_tier || "TIER_1_CRITICAL"}). ${parsed.rationale || "Calibrated via prompt v2"}`,
       cached: false,
     });
+
+    // Save directly into Cloudflare D1 if available
+    try {
+      const db = getD1();
+      if (db) {
+        await saveTraceToD1(db, newTrace);
+      }
+    } catch (e) {
+      console.warn("Failed saving scoring trace to D1:", e);
+    }
 
     const hybridBase = scoreCompanyHybrid(raw);
     const scoredCompany: Company = {
@@ -330,7 +360,7 @@ Evaluate target company against strict Ideal Customer Profile (ICP) criteria. Ou
       rationale: parsed.rationale || "Scored via production LLM evaluation.",
     };
 
-    return { company: scoredCompany, telemetry };
+    return { company: scoredCompany, telemetry, trace: newTrace };
   } catch (err) {
     console.warn("Falling back to deterministic hybrid scoring:", err);
     const fallbackCompany = scoreCompanyHybrid(raw);

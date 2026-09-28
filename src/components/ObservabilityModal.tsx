@@ -70,14 +70,37 @@ export const ObservabilityModal: React.FC<ObservabilityModalProps> = ({ isOpen, 
 
     try {
       const res = await fetch("/api/telemetry");
+      let remoteTraces: TelemetryTrace[] = [];
       if (res.ok) {
         const data = await res.json();
         if (data.traces && data.traces.length > 0) {
-          setTraces(data.traces);
+          remoteTraces = data.traces;
         }
         if (data.stats) {
           setStats(data.stats);
         }
+      }
+
+      // Merge client session traces from localStorage if any
+      let localTraces: TelemetryTrace[] = [];
+      try {
+        if (typeof window !== "undefined") {
+          localTraces = JSON.parse(localStorage.getItem("firmable_recent_traces") || "[]");
+        }
+      } catch {}
+
+      const combined = [...localTraces, ...remoteTraces];
+      const seen = new Set<string>();
+      const deduped: TelemetryTrace[] = [];
+      for (const t of combined) {
+        if (t && t.id && !seen.has(t.id)) {
+          seen.add(t.id);
+          deduped.push(t);
+        }
+      }
+
+      if (deduped.length > 0) {
+        setTraces(deduped);
       }
     } catch (e) {
       console.warn("Could not fetch live telemetry:", e);

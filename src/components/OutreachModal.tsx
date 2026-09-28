@@ -94,6 +94,14 @@ export const OutreachModal: React.FC<OutreachModalProps> = ({ company, onClose }
         // Store in cache
         cacheRef.current[cacheKey] = { draft: data.draft, telemetry: data.telemetry };
 
+        // Save trace into browser session storage for instantaneous cockpit update
+        if (data.trace && typeof window !== "undefined") {
+          try {
+            const existing = JSON.parse(localStorage.getItem("firmable_recent_traces") || "[]");
+            localStorage.setItem("firmable_recent_traces", JSON.stringify([data.trace, ...existing].slice(0, 50)));
+          } catch {}
+        }
+
         // Dispatch trace-logged event to notify cockpit
         if (typeof window !== "undefined") {
           window.dispatchEvent(new CustomEvent("firmable:trace-logged"));
@@ -101,24 +109,33 @@ export const OutreachModal: React.FC<OutreachModalProps> = ({ company, onClose }
       } else {
         const generated = generateOutreach(company, selectedTone);
         setDraft(generated);
+        const fallbackTrace = {
+          id: `tr_${Date.now()}_local`,
+          timestamp: new Date().toISOString(),
+          feature: "outreach_generation",
+          model: "deterministic-heuristic",
+          prompt_version: "v2",
+          input_tokens: 380,
+          output_tokens: 160,
+          latency_ms: 18,
+          cost_usd: 0,
+          company_name: company.name,
+          decision_summary: `Synthesized client-grounded ${selectedTone} pitch for ${company.target_buyer?.title || "VP"}.`,
+          cached: false,
+        };
+
+        if (typeof window !== "undefined") {
+          try {
+            const existing = JSON.parse(localStorage.getItem("firmable_recent_traces") || "[]");
+            localStorage.setItem("firmable_recent_traces", JSON.stringify([fallbackTrace, ...existing].slice(0, 50)));
+          } catch {}
+        }
+
         // Record fallback trace so every AI usage is tracked in table
         fetch("/api/telemetry", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            trace: {
-              feature: "outreach_generation",
-              model: "deterministic-heuristic",
-              prompt_version: "v2",
-              input_tokens: 380,
-              output_tokens: 160,
-              latency_ms: 18,
-              cost_usd: 0,
-              company_name: company.name,
-              decision_summary: `Synthesized client-grounded ${selectedTone} pitch for ${company.target_buyer.title}.`,
-              cached: false,
-            }
-          })
+          body: JSON.stringify({ trace: fallbackTrace })
         }).then(() => {
           if (typeof window !== "undefined") {
             window.dispatchEvent(new CustomEvent("firmable:trace-logged"));
@@ -128,24 +145,32 @@ export const OutreachModal: React.FC<OutreachModalProps> = ({ company, onClose }
     } catch {
       const generated = generateOutreach(company, selectedTone);
       setDraft(generated);
-      // Record fallback trace so every AI usage is tracked in table
+      const fallbackTrace = {
+        id: `tr_${Date.now()}_local`,
+        timestamp: new Date().toISOString(),
+        feature: "outreach_generation",
+        model: "deterministic-heuristic",
+        prompt_version: "v2",
+        input_tokens: 380,
+        output_tokens: 160,
+        latency_ms: 18,
+        cost_usd: 0,
+        company_name: company.name,
+        decision_summary: `Synthesized client-grounded ${selectedTone} pitch for ${company.target_buyer?.title || "VP"}.`,
+        cached: false,
+      };
+
+      if (typeof window !== "undefined") {
+        try {
+          const existing = JSON.parse(localStorage.getItem("firmable_recent_traces") || "[]");
+          localStorage.setItem("firmable_recent_traces", JSON.stringify([fallbackTrace, ...existing].slice(0, 50)));
+        } catch {}
+      }
+
       fetch("/api/telemetry", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          trace: {
-            feature: "outreach_generation",
-            model: "deterministic-heuristic",
-            prompt_version: "v2",
-            input_tokens: 380,
-            output_tokens: 160,
-            latency_ms: 18,
-            cost_usd: 0,
-            company_name: company.name,
-            decision_summary: `Synthesized client-grounded ${selectedTone} pitch for ${company.target_buyer.title}.`,
-            cached: false,
-          }
-        })
+        body: JSON.stringify({ trace: fallbackTrace })
       }).then(() => {
         if (typeof window !== "undefined") {
           window.dispatchEvent(new CustomEvent("firmable:trace-logged"));
