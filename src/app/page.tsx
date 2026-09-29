@@ -13,6 +13,9 @@ import { OutreachModal } from "@/components/OutreachModal";
 import { EvalModal } from "@/components/EvalModal";
 import { ObservabilityModal } from "@/components/ObservabilityModal";
 import { CsvUploadModal } from "@/components/CsvUploadModal";
+import { DocsModal } from "@/components/DocsModal";
+import { SettingsModal } from "@/components/SettingsModal";
+import { getCustomApiKey } from "@/lib/apiKeyManager";
 
 export default function DashboardPage() {
   const [darkMode, setDarkMode] = useState(true);
@@ -28,6 +31,8 @@ export default function DashboardPage() {
   const [isEvalOpen, setIsEvalOpen] = useState(false);
   const [isObservabilityOpen, setIsObservabilityOpen] = useState(false);
   const [isUploadOpen, setIsUploadOpen] = useState(false);
+  const [isDocsOpen, setIsDocsOpen] = useState(false);
+  const [isSettingsOpen, setIsSettingsOpen] = useState(false);
 
   // Filter state
   const [filters, setFilters] = useState<FilterState>({
@@ -123,10 +128,16 @@ export default function DashboardPage() {
     // If a single company is added, refine with live OpenRouter LLM scoring
     if (newRawCompanies.length === 1) {
       try {
+        const customKey = getCustomApiKey();
+        const headers: Record<string, string> = { "Content-Type": "application/json" };
+        if (customKey) {
+          headers["x-openrouter-key"] = customKey;
+        }
+
         const res = await fetch("/api/score-account", {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ company: newRawCompanies[0] }),
+          headers,
+          body: JSON.stringify({ company: newRawCompanies[0], apiKey: customKey || undefined }),
         });
         if (res.ok) {
           const { company: liveScored } = await res.json();
@@ -185,7 +196,7 @@ export default function DashboardPage() {
       c.headcount,
       c.engineering_growth_6m_pct,
       c.security_headcount,
-      `"${(c.buying_signals[0]?.headline || '').replace(/"/g, '""')}"`
+      `"${(c.buying_signals?.[0]?.headline || '').replace(/"/g, '""')}"`
     ]);
     const csvContent = [headers.join(","), ...rows.map(r => r.join(","))].join("\n");
     const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
@@ -208,6 +219,8 @@ export default function DashboardPage() {
         onOpenEvals={() => setIsEvalOpen(true)}
         onOpenObservability={() => setIsObservabilityOpen(true)}
         onExportCsv={handleExportCsv}
+        onOpenDocs={() => setIsDocsOpen(true)}
+        onOpenSettings={() => setIsSettingsOpen(true)}
       />
 
       {/* Main Content Area */}
@@ -242,7 +255,7 @@ export default function DashboardPage() {
       {/* Clean, Simple Footer */}
       <footer className="border-t border-slate-200/80 dark:border-slate-800/80 bg-white dark:bg-[#0B0F17] py-6 px-6 text-center text-xs text-slate-500 transition-colors">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p>© 2026 Firmable Take-Home Submission • AI Sales Intelligence Platform</p>
+          <p>© 2026 CyberIntel • AI Sales Intelligence Platform</p>
           <div className="flex items-center gap-2">
             <span className="h-2 w-2 rounded-full bg-emerald-500"></span>
             <span>Real-time Sales Intelligence Active</span>
@@ -264,6 +277,7 @@ export default function DashboardPage() {
       <OutreachModal
         company={outreachCompany}
         onClose={() => setOutreachCompany(null)}
+        onOpenSettings={() => setIsSettingsOpen(true)}
       />
 
       {/* Evaluation Benchmark Scorecard Modal */}
@@ -283,6 +297,18 @@ export default function DashboardPage() {
         isOpen={isUploadOpen}
         onClose={() => setIsUploadOpen(false)}
         onIngestCompanies={handleIngestCompanies}
+      />
+
+      {/* Interactive System Documentation, Architecture & Math Modal */}
+      <DocsModal
+        isOpen={isDocsOpen}
+        onClose={() => setIsDocsOpen(false)}
+      />
+
+      {/* AI Inference & API Key Settings Modal */}
+      <SettingsModal
+        isOpen={isSettingsOpen}
+        onClose={() => setIsSettingsOpen(false)}
       />
     </div>
   );

@@ -98,7 +98,7 @@ export const CompanyTable: React.FC<TableProps> = ({
             </thead>
             <tbody className="divide-y divide-slate-100 dark:divide-slate-800/80">
               {companies.map((company) => {
-                const topSignal = company.buying_signals[0];
+                const topSignal = company.buying_signals?.[0];
                 return (
                   <tr
                     key={company.id}

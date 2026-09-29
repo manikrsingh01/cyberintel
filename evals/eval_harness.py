@@ -211,7 +211,7 @@ def evaluate_version(benchmark: List[Dict[str, Any]], version_name: str, scorer_
 
 def main():
     print("=" * 80)
-    print("🚀 FIRMABLE AI SALES INTELLIGENCE - EVALUATION HARNESS")
+    print("🚀 CYBERINTEL AI SALES INTELLIGENCE - EVALUATION HARNESS")
     print(f"Loading benchmark dataset: {BENCHMARK_PATH}")
     print("=" * 80)
 

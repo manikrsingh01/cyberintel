@@ -254,10 +254,16 @@ function generateSalesBattlecard(
 }
 
 export function generateOutreach(company: Company, tone: "sdr_direct" | "executive_vp" = "sdr_direct"): OutreachDraft {
-  const signal = company.buying_signals[0] || {
+  const signal = company?.buying_signals?.[0] || {
     headline: "cloud infrastructure expansion",
     description: "rapid engineering and cloud workload scaling"
   };
+  const buyerTitle = company?.target_buyer?.title || "VP of Engineering";
+  const complianceList = Array.isArray(company?.compliance_mandates) && company.compliance_mandates.length > 0
+    ? company.compliance_mandates
+    : ["SOC 2", "ISO 27001"];
+  const growth = company?.engineering_growth_6m_pct ?? 25;
+  const cloud = company?.cloud_environment || "cloud infrastructure";
 
   const tokensIn = 410;
   const tokensOut = 175;
@@ -273,20 +279,20 @@ export function generateOutreach(company: Company, tone: "sdr_direct" | "executi
     output_tokens: tokensOut,
     latency_ms: latency,
     cost_usd: cost,
-    company_name: company.name,
-    decision_summary: `Generated ${tone} cold outreach tailored to ${company.target_buyer.title} focusing on ${signal.headline}`,
+    company_name: company?.name || "Target Account",
+    decision_summary: `Generated ${tone} cold outreach tailored to ${buyerTitle} focusing on ${signal.headline}`,
     cached: false
   });
 
   if (tone === "executive_vp") {
     return {
-      persona_targeted: company.target_buyer.title,
+      persona_targeted: buyerTitle,
       email: {
-        subject: `executive brief: ${company.name}'s cloud security & compliance`,
-        body: `Hi ${company.target_buyer.title},\n\nI noticed ${company.name}'s engineering team scaled ${company.engineering_growth_6m_pct}% over recent quarters while maintaining aggressive product delivery deadlines.\n\nAt this scale in ${company.industry}, managing ${company.compliance_mandates.join(" and ") || "SOC 2 audits"} typically costs engineering leadership 15+ hours a week in manual evidence gathering.\n\nWe recently partnered with peer engineering leaders to automate cloud posture and continuous compliance verification directly in CI/CD.\n\nWorth a brief 3-minute executive preview?`
+        subject: `executive brief: ${company?.name || "cloud"}'s cloud security & compliance`,
+        body: `Hi ${buyerTitle},\n\nI noticed ${company?.name || "your team"}'s engineering team scaled ${growth}% over recent quarters while maintaining aggressive product delivery deadlines.\n\nAt this scale in ${company?.industry || "tech"}, managing ${complianceList.join(" and ")} typically costs engineering leadership 15+ hours a week in manual evidence gathering.\n\nWe recently partnered with peer engineering leaders to automate cloud posture and continuous compliance verification directly in CI/CD.\n\nWorth a brief 3-minute executive preview?`
       },
       linkedin_inmail: {
-        body: `Noticed ${company.name}'s infrastructure expansion across ${company.cloud_environment}. We help peer ${company.industry} leaders automate continuous security compliance without adding headcount. Open to seeing the 2-minute architectural overview?`
+        body: `Noticed ${company?.name || "your"}'s infrastructure expansion across ${cloud}. We help peer ${company?.industry || "tech"} leaders automate continuous security compliance without adding headcount. Open to seeing the 2-minute architectural overview?`
       },
       sales_angle: "Focuses on strategic executive bandwidth preservation and ROI."
     };
@@ -294,13 +300,13 @@ export function generateOutreach(company: Company, tone: "sdr_direct" | "executi
 
   // SDR Direct (Default)
   return {
-    persona_targeted: company.target_buyer.title,
+    persona_targeted: buyerTitle,
     email: {
-      subject: `quick q on ${company.name}'s ${signal.headline.toLowerCase()}`,
-      body: `Hi Alex,\n\nNoticed ${company.name} is scaling out engineering rapidly (+${company.engineering_growth_6m_pct}% recently) while managing ${company.compliance_mandates.join(", ") || "enterprise cloud workloads"}.\n\nSpecifically saw: ${signal.description}\n\nMost teams at this stage don't have time to hire 3 security analysts just to triage cloud alerts and prepare audit reports. We provide continuous automated posture scanning built specifically for fast-moving dev teams.\n\nOpen to a 2-minute look at how peer engineering heads automated this?`
+      subject: `quick q on ${company?.name || "infrastructure"}'s ${signal.headline.toLowerCase()}`,
+      body: `Hi ${buyerTitle.split(" ")[0] || "there"},\n\nNoticed ${company?.name || "your company"} is scaling out engineering rapidly (+${growth}% recently) while managing ${complianceList.join(", ")}.\n\nSpecifically saw: ${signal.description}\n\nMost teams at this stage don't have time to hire 3 security analysts just to triage cloud alerts and prepare audit reports. We provide continuous automated posture scanning built specifically for fast-moving dev teams.\n\nOpen to a 2-minute look at how peer engineering heads automated this?`
     },
     linkedin_inmail: {
-      body: `Alex — saw ${company.name}'s engineering team scaling up quickly. How are you handling automated cloud audit evidence ahead of upcoming ${company.compliance_mandates[0] || "customer security reviews"}? Happy to share how peer engineering heads solved this without hiring dedicated SecOps.`
+      body: `Saw ${company?.name || "your company"}'s engineering team scaling up quickly. How are you handling automated cloud audit evidence ahead of upcoming ${complianceList[0] || "customer security reviews"}? Happy to share how peer engineering heads solved this without hiring dedicated SecOps.`
     },
     sales_angle: "Zero-fluff technical outreach highlighting engineering velocity preservation."
   };

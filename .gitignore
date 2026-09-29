@@ -41,3 +41,6 @@ skills/
 Input_data/
 data/chunks_50k/
 data/*.sql
+
+# Build info
+*.tsbuildinfo

@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { Sun, Moon, UploadCloud, BarChart2, Download, Sliders, ChevronDown, CheckCircle2, Shield } from "lucide-react";
+import { Sun, Moon, UploadCloud, BarChart2, Download, Sliders, ChevronDown, CheckCircle2, Shield, BookOpen, Key, Settings } from "lucide-react";
 
 interface HeaderProps {
   darkMode: boolean;
@@ -8,6 +8,8 @@ interface HeaderProps {
   onOpenEvals: () => void;
   onOpenObservability?: () => void;
   onExportCsv?: () => void;
+  onOpenDocs?: () => void;
+  onOpenSettings?: () => void;
 }
 
 export const DashboardHeader: React.FC<HeaderProps> = ({
@@ -16,7 +18,9 @@ export const DashboardHeader: React.FC<HeaderProps> = ({
   onOpenUpload,
   onOpenEvals,
   onOpenObservability,
-  onExportCsv
+  onExportCsv,
+  onOpenDocs,
+  onOpenSettings
 }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
@@ -47,7 +51,7 @@ export const DashboardHeader: React.FC<HeaderProps> = ({
           <div>
             <div className="flex items-center gap-2">
               <span className="text-base font-bold tracking-tight text-slate-900 dark:text-white">
-                Firmable <span className="text-sky-600 dark:text-sky-400 font-semibold">CyberIntel</span>
+                Cyber<span className="text-sky-600 dark:text-sky-400 font-semibold">Intel</span>
               </span>
               <span className="inline-flex items-center gap-1 text-[11px] font-medium px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700">
                 <span className="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
@@ -75,11 +79,35 @@ export const DashboardHeader: React.FC<HeaderProps> = ({
           {/* Quick Import Button (Primary SDR tool) */}
           <button
             onClick={onOpenUpload}
-            className="flex items-center gap-1.5 h-9 px-4 rounded-full bg-slate-900 hover:bg-slate-800 dark:bg-white dark:hover:bg-slate-100 text-white dark:text-slate-900 text-xs font-semibold transition-all shadow-sm"
+            className="flex items-center gap-1.5 h-9 px-4 rounded-full bg-slate-900 hover:bg-slate-800 dark:bg-white dark:hover:bg-slate-100 text-white dark:text-slate-900 text-xs font-semibold transition-all shadow-sm active:scale-[0.98]"
           >
             <UploadCloud className="h-3.5 w-3.5" />
             <span>Import CSV</span>
           </button>
+
+          {/* Interactive Documentation & Interviewer Guide Button */}
+          {onOpenDocs && (
+            <button
+              onClick={onOpenDocs}
+              className="flex items-center gap-1.5 h-9 px-3.5 rounded-full border border-sky-500/30 bg-sky-50 dark:bg-sky-950/40 hover:bg-sky-100 dark:hover:bg-sky-900/60 text-sky-700 dark:text-sky-300 text-xs font-semibold transition-all shadow-sm active:scale-[0.98]"
+              title="Open Technical Documentation, Architecture & Formulas"
+            >
+              <BookOpen className="h-3.5 w-3.5 text-sky-600 dark:text-sky-400" />
+              <span>Docs</span>
+            </button>
+          )}
+
+          {/* API Key & Quota Settings Button (1-Click Header Access) */}
+          {onOpenSettings && (
+            <button
+              onClick={onOpenSettings}
+              className="flex items-center gap-1.5 h-9 px-3 rounded-full border border-amber-500/30 bg-amber-50 dark:bg-amber-950/40 hover:bg-amber-100 dark:hover:bg-amber-900/60 text-amber-700 dark:text-amber-300 text-xs font-semibold transition-all shadow-sm active:scale-[0.98]"
+              title="Configure Personal OpenRouter API Key & View Quota"
+            >
+              <Key className="h-3.5 w-3.5 text-amber-600 dark:text-amber-400" />
+              <span className="hidden sm:inline">API Key</span>
+            </button>
+          )}
 
           {/* Secondary Tools & Settings Dropdown Menu (Hick's Law - Keep Clean) */}
           <div className="relative" ref={menuRef}>
@@ -126,7 +154,7 @@ export const DashboardHeader: React.FC<HeaderProps> = ({
                   >
                     <Sliders className="h-4 w-4 text-emerald-500" />
                     <div>
-                      <p className="font-semibold text-slate-800 dark:text-slate-200">Traces & Cost Cockpit</p>
+                      <p className="font-semibold text-slate-800 dark:text-slate-200">Traces &amp; Cost Cockpit</p>
                       <p className="text-[11px] text-slate-400">Telemetry logs • $1.57/10k math</p>
                     </div>
                   </button>

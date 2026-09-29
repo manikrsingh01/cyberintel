@@ -18,10 +18,13 @@ export interface TelemetryResult {
 /**
  * Call OpenRouter API with error handling, timeout, and latency/token instrumentation
  */
-async function callOpenRouter(prompt: string, model: string = DEFAULT_MODEL) {
-  const apiKey = process.env.OPENROUTER_API_KEY;
+async function callOpenRouter(prompt: string, model: string = DEFAULT_MODEL, customApiKey?: string) {
+  const apiKey = (customApiKey && customApiKey.trim().length > 5)
+    ? customApiKey.trim()
+    : process.env.OPENROUTER_API_KEY;
+
   if (!apiKey) {
-    throw new Error("Missing OPENROUTER_API_KEY in environment");
+    throw new Error("No OpenRouter API key found. Please configure your key in Settings.");
   }
 
   const startTime = Date.now();
@@ -35,8 +38,8 @@ async function callOpenRouter(prompt: string, model: string = DEFAULT_MODEL) {
       headers: {
         "Authorization": `Bearer ${apiKey}`,
         "Content-Type": "application/json",
-        "HTTP-Referer": "http://localhost:3000",
-        "X-Title": "Firmable CyberIntel Sales Platform",
+        "HTTP-Referer": "https://cyberintel.pages.dev",
+        "X-Title": "CyberIntel Sales Platform",
       },
       body: JSON.stringify({
         model,
@@ -52,6 +55,12 @@ async function callOpenRouter(prompt: string, model: string = DEFAULT_MODEL) {
 
     if (!res.ok) {
       const errorText = await res.text();
+      if (res.status === 401) {
+        throw new Error("Invalid OpenRouter API Key. Please verify your key in Settings.");
+      }
+      if (res.status === 402 || res.status === 429) {
+        throw new Error("OpenRouter API quota or credit limit reached. Please verify your OpenRouter balance or change your API key in Settings.");
+      }
       throw new Error(`OpenRouter API error ${res.status}: ${errorText}`);
     }
 
@@ -144,8 +153,15 @@ function safeJsonParse(raw: string): any {
 export async function generateLiveOutreach(
   company: Company,
   tone: "sdr_direct" | "executive_vp" = "sdr_direct",
-  customInstruction?: string
-): Promise<{ draft: OutreachDraft; telemetry: TelemetryResult; trace?: TelemetryTrace }> {
+  customInstruction?: string,
+  customApiKey?: string
+): Promise<{
+  draft: OutreachDraft;
+  telemetry: TelemetryResult;
+  trace?: TelemetryTrace;
+  quotaExceeded?: boolean;
+  errorMessage?: string;
+}> {
   try {
     const toneInstructions = tone === "sdr_direct"
       ? `Tone: DIRECT & TECHNICAL (Peer-to-peer SDR for Engineering Leaders).
@@ -199,7 +215,7 @@ ${customizationBlock}
 - Urgency Window: ${company.audit_countdown_label || "Upcoming audit review"}
 - Tactical Counter Hook: ${company.sales_battlecard?.counter_hook || "Automate continuous evidence collection without developer friction"}`;
 
-    const { rawContent, telemetry } = await callOpenRouter(prompt);
+    const { rawContent, telemetry } = await callOpenRouter(prompt, DEFAULT_MODEL, customApiKey);
     const parsed = safeJsonParse(rawContent);
 
     // Record live real-time trace into telemetry store
@@ -216,14 +232,14 @@ ${customizationBlock}
       cached: false,
     });
 
-    // Save directly into Cloudflare D1 if available
+    // Save directly into Cloudflare storage if available
     try {
       const db = getD1();
       if (db) {
         await saveTraceToD1(db, newTrace);
       }
     } catch (e) {
-      console.warn("Failed saving trace to D1 in generateLiveOutreach:", e);
+      console.warn("Failed saving trace to edge store in generateLiveOutreach:", e);
     }
 
     const fallbackInmail = `Saw ${company.name}'s engineering team scaling rapidly on ${cloudEnv.split(" ")[0]}. How are you handling automated compliance evidence ahead of audits without dedicating SecOps staff? Open to a 2-min peer breakdown?`;
@@ -244,9 +260,18 @@ ${customizationBlock}
       },
       telemetry,
       trace: newTrace,
+      quotaExceeded: false,
     };
-  } catch (err) {
-    console.warn("Falling back to local heuristic outreach generator:", err);
+  } catch (err: any) {
+    const isQuotaOrKeyError = 
+      err?.message?.includes("quota") || 
+      err?.message?.includes("credit") || 
+      err?.message?.includes("Key") || 
+      err?.message?.includes("402") || 
+      err?.message?.includes("429") || 
+      err?.message?.includes("401");
+
+    console.warn("Falling back to local heuristic outreach generator:", err?.message || err);
     const fallbackDraft = generateOutreach(company, tone);
     return {
       draft: fallbackDraft,
@@ -258,6 +283,8 @@ ${customizationBlock}
         model: "heuristic-fallback",
         is_live: false,
       },
+      quotaExceeded: isQuotaOrKeyError,
+      errorMessage: err?.message || "AI generation failed, fallback applied",
     };
   }
 }
@@ -266,8 +293,15 @@ ${customizationBlock}
  * Live AI Account Scoring via OpenRouter (Production prompt v2)
  */
 export async function scoreLiveAccount(
-  raw: Partial<Company>
-): Promise<{ company: Company; telemetry: TelemetryResult; trace?: TelemetryTrace }> {
+  raw: Partial<Company>,
+  customApiKey?: string
+): Promise<{
+  company: Company;
+  telemetry: TelemetryResult;
+  trace?: TelemetryTrace;
+  quotaExceeded?: boolean;
+  errorMessage?: string;
+}> {
   try {
     const prompt = `You are an AI-Native B2B Sales Intelligence Scoring Engine for an enterprise cybersecurity vendor selling cloud posture and continuous compliance automation.
 
@@ -311,7 +345,7 @@ Evaluate target company against strict Ideal Customer Profile (ICP) criteria. Ou
 - Security Staff: ${raw.security_headcount ?? 0}
 - Triggers: ${raw.recent_triggers || "Active development"}`;
 
-    const { rawContent, telemetry } = await callOpenRouter(prompt);
+    const { rawContent, telemetry } = await callOpenRouter(prompt, DEFAULT_MODEL, customApiKey);
     const parsed = safeJsonParse(rawContent);
 
     // Record live real-time trace into telemetry store
@@ -324,18 +358,18 @@ Evaluate target company against strict Ideal Customer Profile (ICP) criteria. Ou
       latency_ms: telemetry.latency_ms,
       cost_usd: telemetry.cost_usd,
       company_name: raw.name || "New Account",
-      decision_summary: `Scored ${parsed.cyber_risk_score || 85}/100 (${parsed.risk_tier || "TIER_1_CRITICAL"}). ${parsed.rationale || "Calibrated via prompt v2"}`,
+      decision_summary: `Scored ${parsed?.cyber_risk_score || 85}/100 (${parsed?.risk_tier || "TIER_1_CRITICAL"}). ${parsed?.rationale || "Calibrated via prompt v2"}`,
       cached: false,
     });
 
-    // Save directly into Cloudflare D1 if available
+    // Save directly into Cloudflare storage if available
     try {
       const db = getD1();
       if (db) {
         await saveTraceToD1(db, newTrace);
       }
     } catch (e) {
-      console.warn("Failed saving scoring trace to D1:", e);
+      console.warn("Failed saving scoring trace to edge store:", e);
     }
 
     const hybridBase = scoreCompanyHybrid(raw);
@@ -361,9 +395,17 @@ Evaluate target company against strict Ideal Customer Profile (ICP) criteria. Ou
       rationale: parsed.rationale || "Scored via production LLM evaluation.",
     };
 
-    return { company: scoredCompany, telemetry, trace: newTrace };
-  } catch (err) {
-    console.warn("Falling back to deterministic hybrid scoring:", err);
+    return { company: scoredCompany, telemetry, trace: newTrace, quotaExceeded: false };
+  } catch (err: any) {
+    const isQuotaOrKeyError = 
+      err?.message?.includes("quota") || 
+      err?.message?.includes("credit") || 
+      err?.message?.includes("Key") || 
+      err?.message?.includes("402") || 
+      err?.message?.includes("429") || 
+      err?.message?.includes("401");
+
+    console.warn("Falling back to deterministic hybrid scoring:", err?.message || err);
     const fallbackCompany = scoreCompanyHybrid(raw);
     return {
       company: fallbackCompany,
@@ -375,6 +417,8 @@ Evaluate target company against strict Ideal Customer Profile (ICP) criteria. Ou
         model: "deterministic-heuristic",
         is_live: false,
       },
+      quotaExceeded: isQuotaOrKeyError,
+      errorMessage: err?.message || "AI scoring failed, fallback applied",
     };
   }
 }

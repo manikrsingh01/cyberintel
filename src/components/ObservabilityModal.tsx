@@ -85,7 +85,7 @@ export const ObservabilityModal: React.FC<ObservabilityModalProps> = ({ isOpen, 
       let localTraces: TelemetryTrace[] = [];
       try {
         if (typeof window !== "undefined") {
-          localTraces = JSON.parse(localStorage.getItem("firmable_recent_traces") || "[]");
+          localTraces = JSON.parse(localStorage.getItem("cyberintel_recent_traces") || "[]");
         }
       } catch {}
 
@@ -134,8 +134,10 @@ export const ObservabilityModal: React.FC<ObservabilityModalProps> = ({ isOpen, 
     const handleTraceLogged = () => {
       fetchTelemetry(false);
     };
-    window.addEventListener("firmable:trace-logged", handleTraceLogged);
-    return () => window.removeEventListener("firmable:trace-logged", handleTraceLogged);
+    window.addEventListener("cyberintel:trace-logged", handleTraceLogged);
+    return () => {
+      window.removeEventListener("cyberintel:trace-logged", handleTraceLogged);
+    };
   }, []);
 
   if (!isOpen) return null;
@@ -426,7 +428,7 @@ export const ObservabilityModal: React.FC<ObservabilityModalProps> = ({ isOpen, 
 
         {/* Footer */}
         <div className="px-6 py-4 border-t border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/50 flex items-center justify-between text-xs text-slate-500">
-          <span>Firmable AI Data Engineering Submission</span>
+          <span>CyberIntel AI Data Engineering Platform</span>
           <button
             onClick={onClose}
             className="px-4 py-1.5 rounded-full bg-slate-900 hover:bg-slate-800 dark:bg-white dark:hover:bg-slate-100 text-white dark:text-slate-900 font-semibold transition-all"

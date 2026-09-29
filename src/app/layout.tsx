@@ -9,7 +9,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Firmable CyberIntel - AI Sales Intelligence Platform",
+  title: "CyberIntel - AI Sales Intelligence Platform",
   description: "B2B Sales Intelligence Platform for Cybersecurity Software Companies. Identify, prioritize, and target in-market enterprise accounts.",
 };
 
