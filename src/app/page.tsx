@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useMemo, useEffect } from "react";
-import { Company, FilterState } from "@/lib/types";
+import { Company, FilterState, FilterCounts } from "@/lib/types";
 import { initialCompanies } from "@/lib/mockData";
 import { scoreCompanyHybrid } from "@/lib/scoring";
 import { DashboardHeader } from "@/components/DashboardHeader";
@@ -20,6 +20,10 @@ export default function DashboardPage() {
   const [selectedCompany, setSelectedCompany] = useState<Company | null>(null);
   const [outreachCompany, setOutreachCompany] = useState<Company | null>(null);
 
+  // Pagination state: Limit 20 per page for smooth load & rendering
+  const [page, setPage] = useState(1);
+  const pageSize = 20;
+
   // Modals state
   const [isEvalOpen, setIsEvalOpen] = useState(false);
   const [isObservabilityOpen, setIsObservabilityOpen] = useState(false);
@@ -33,6 +37,26 @@ export default function DashboardPage() {
     minScore: 0,
     selectedSignalType: ""
   });
+
+  // Fetch live companies from Cloudflare D1 on mount
+  useEffect(() => {
+    fetch("/api/companies")
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.success && Array.isArray(data.companies) && data.companies.length > 0) {
+          setCompanies(data.companies);
+        }
+      })
+      .catch((err) => {
+        console.warn("Fallback to bundled seed companies:", err);
+      });
+  }, []);
+
+  // Reset to page 1 whenever filters change
+  const handleFiltersChange = (newFilters: FilterState) => {
+    setFilters(newFilters);
+    setPage(1);
+  };
 
   // Theme synchronization with root HTML
   useEffect(() => {
@@ -109,6 +133,38 @@ export default function DashboardPage() {
     }
   };
 
+  // Dynamic filter counts computed across all companies
+  const counts: FilterCounts = useMemo(() => {
+    return {
+      total: companies.length,
+      tier1: companies.filter((c) => c.risk_tier === "TIER_1_CRITICAL").length,
+      tier2: companies.filter((c) => c.risk_tier === "TIER_2_MODERATE").length,
+      tier3: companies.filter((c) => c.risk_tier === "TIER_3_LOW").length,
+      disqualified: companies.filter((c) => c.risk_tier === "DISQUALIFIED").length,
+      cveCount: companies.filter((c) =>
+        c.buying_signals.some((s) => s.type === "CVE_VULNERABILITY")
+      ).length,
+      sslCount: companies.filter((c) =>
+        c.buying_signals.some((s) => s.type === "EXPIRED_SSL")
+      ).length,
+      dbCount: companies.filter((c) =>
+        c.buying_signals.some((s) => s.type === "DATABASE_EXPOSURE")
+      ).length,
+      devGrowthCount: companies.filter(
+        (c) =>
+          c.buying_signals.some((s) => s.type === "SECURITY_DEBT_DISPARITY") ||
+          (c.engineering_growth_6m_pct > 25 && c.security_headcount === 0)
+      ).length,
+    };
+  }, [companies]);
+
+  // Paginated companies: Limit 20 per page for smooth load & rendering
+  const totalPages = Math.ceil(filteredCompanies.length / pageSize) || 1;
+  const paginatedCompanies = useMemo(() => {
+    const start = (page - 1) * pageSize;
+    return filteredCompanies.slice(start, start + pageSize);
+  }, [filteredCompanies, page, pageSize]);
+
   // CSV Export utility
   const handleExportCsv = () => {
     const headers = ["Company", "Domain", "Industry", "Score", "Tier", "Headcount", "Growth %", "Security Staff", "Top Signal"];
@@ -151,16 +207,25 @@ export default function DashboardPage() {
         {/* KPI Metrics Summary */}
         <MetricsSummary companies={companies} />
 
-        {/* Search, Tier & Signal Filters */}
+        {/* Search, Tier & Signal Filters with real dynamic counts */}
         <FilterBar
           filters={filters}
-          onChange={setFilters}
+          onChange={handleFiltersChange}
           industries={industries}
+          counts={counts}
         />
 
-        {/* Interactive Pipeline Accounts Table */}
+        {/* Interactive Pipeline Accounts Table with 20 items per page */}
         <CompanyTable
-          companies={filteredCompanies}
+          companies={paginatedCompanies}
+          currentPage={page}
+          totalPages={totalPages}
+          totalCount={filteredCompanies.length}
+          pageSize={pageSize}
+          onPageChange={(newPage) => {
+            setPage(newPage);
+            window.scrollTo({ top: 320, behavior: "smooth" });
+          }}
           onSelectCompany={(comp) => setSelectedCompany(comp)}
           onOpenOutreach={(comp) => setOutreachCompany(comp)}
         />

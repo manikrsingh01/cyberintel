@@ -81,3 +81,15 @@ export interface FilterState {
   minScore: number;
   selectedSignalType: string;
 }
+
+export interface FilterCounts {
+  total: number;
+  tier1: number;
+  tier2: number;
+  tier3: number;
+  disqualified: number;
+  cveCount: number;
+  sslCount: number;
+  dbCount: number;
+  devGrowthCount: number;
+}

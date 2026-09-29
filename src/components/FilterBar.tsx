@@ -1,17 +1,18 @@
-import React from "react";
-import { FilterState } from "@/lib/types";
+import { FilterState, FilterCounts } from "@/lib/types";
 import { Search, X, ShieldAlert, Sparkles, Filter } from "lucide-react";
 
 interface FilterBarProps {
   filters: FilterState;
   onChange: (newFilters: FilterState) => void;
   industries: string[];
+  counts?: FilterCounts;
 }
 
 export const FilterBar: React.FC<FilterBarProps> = ({
   filters,
   onChange,
-  industries
+  industries,
+  counts
 }) => {
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     onChange({ ...filters, search: e.target.value });
@@ -115,7 +116,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({
                   : "bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700 border-transparent"
               }`}
             >
-              All
+              All {counts?.total !== undefined ? `(${counts.total.toLocaleString()})` : ""}
             </button>
 
             <button
@@ -127,7 +128,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({
               }`}
             >
               <span className="h-1.5 w-1.5 rounded-full bg-rose-500"></span>
-              <span>High Priority (Tier 1)</span>
+              <span>High Priority (Tier 1) {counts?.tier1 !== undefined ? `(${counts.tier1.toLocaleString()})` : ""}</span>
             </button>
 
             <button
@@ -139,7 +140,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({
               }`}
             >
               <span className="h-1.5 w-1.5 rounded-full bg-amber-500"></span>
-              <span>Moderate (Tier 2)</span>
+              <span>Moderate (Tier 2) {counts?.tier2 !== undefined ? `(${counts.tier2.toLocaleString()})` : ""}</span>
             </button>
 
             <button
@@ -151,7 +152,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({
               }`}
             >
               <span className="h-1.5 w-1.5 rounded-full bg-sky-500"></span>
-              <span>Low (Tier 3)</span>
+              <span>Low (Tier 3) {counts?.tier3 !== undefined ? `(${counts.tier3.toLocaleString()})` : ""}</span>
             </button>
 
             <button
@@ -163,7 +164,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({
               }`}
             >
               <span className="h-1.5 w-1.5 rounded-full bg-slate-400"></span>
-              <span>Disqualified</span>
+              <span>Disqualified {counts?.disqualified !== undefined ? `(${counts.disqualified.toLocaleString()})` : ""}</span>
             </button>
           </div>
 
@@ -182,7 +183,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({
               }`}
             >
               <ShieldAlert className="h-3 w-3" />
-              <span>Active CVEs (580)</span>
+              <span>Active CVEs {counts?.cveCount !== undefined ? `(${counts.cveCount.toLocaleString()})` : ""}</span>
             </button>
 
             <button
@@ -194,7 +195,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({
               }`}
             >
               <Sparkles className="h-3 w-3" />
-              <span>Expired SSL (459)</span>
+              <span>Expired SSL {counts?.sslCount !== undefined ? `(${counts.sslCount.toLocaleString()})` : ""}</span>
             </button>
 
             <button
@@ -206,7 +207,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({
               }`}
             >
               <ShieldAlert className="h-3 w-3" />
-              <span>Exposed DB (41)</span>
+              <span>Exposed DB {counts?.dbCount !== undefined ? `(${counts.dbCount.toLocaleString()})` : ""}</span>
             </button>
 
             <button
@@ -217,7 +218,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({
                   : "bg-slate-100 dark:bg-slate-800 text-blue-700 dark:text-blue-300 hover:bg-blue-50 dark:hover:bg-slate-700 border-transparent"
               }`}
             >
-              <span>Dev Growth + 0 SecOps</span>
+              <span>Dev Growth + 0 SecOps {counts?.devGrowthCount !== undefined ? `(${counts.devGrowthCount.toLocaleString()})` : ""}</span>
             </button>
           </div>
         </div>

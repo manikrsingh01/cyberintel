@@ -37,5 +37,6 @@ yarn-error.log*
 .gemini/
 skills/
 
-# Large Datasets
+# Large Datasets & Batches
 Input_data/
+data/chunks_50k/

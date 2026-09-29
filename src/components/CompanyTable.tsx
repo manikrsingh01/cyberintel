@@ -1,18 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import { Company } from "@/lib/types";
-import { Send, ChevronRight, AlertCircle, MapPin, Sparkles, ShieldAlert, ArrowUpRight } from "lucide-react";
+import { Send, ChevronRight, ChevronLeft, AlertCircle, MapPin, Sparkles, ShieldAlert, ArrowUpRight } from "lucide-react";
 
 interface TableProps {
   companies: Company[];
   onSelectCompany: (company: Company) => void;
   onOpenOutreach: (company: Company) => void;
+  currentPage?: number;
+  totalPages?: number;
+  totalCount?: number;
+  pageSize?: number;
+  onPageChange?: (page: number) => void;
 }
 
 export const CompanyTable: React.FC<TableProps> = ({
   companies,
   onSelectCompany,
-  onOpenOutreach
+  onOpenOutreach,
+  currentPage = 1,
+  totalPages = 1,
+  totalCount = companies.length,
+  pageSize = 20,
+  onPageChange
 }) => {
+  const [jumpPage, setJumpPage] = useState("");
   if (companies.length === 0) {
     return (
       <div className="max-w-7xl mx-auto px-6 py-8">
@@ -237,6 +248,137 @@ export const CompanyTable: React.FC<TableProps> = ({
             </tbody>
           </table>
         </div>
+
+        {/* Smooth Pagination Bar: Limit 20 per page */}
+        {totalPages > 1 && onPageChange && (
+          <div className="border-t border-slate-200 dark:border-slate-800 px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-4 bg-slate-50/50 dark:bg-slate-900/30">
+            {/* Account count summary */}
+            <div className="text-xs text-slate-500 dark:text-slate-400">
+              Showing{" "}
+              <span className="font-semibold text-slate-900 dark:text-white">
+                {((currentPage - 1) * pageSize) + 1}
+              </span>{" "}
+              to{" "}
+              <span className="font-semibold text-slate-900 dark:text-white">
+                {Math.min(currentPage * pageSize, totalCount)}
+              </span>{" "}
+              of{" "}
+              <span className="font-semibold text-slate-900 dark:text-white font-mono">
+                {totalCount.toLocaleString()}
+              </span>{" "}
+              accounts (20 per page)
+            </div>
+
+            {/* Pagination Controls */}
+            <div className="flex items-center gap-1.5 flex-wrap">
+              {/* Previous Page Button */}
+              <button
+                onClick={() => onPageChange(Math.max(1, currentPage - 1))}
+                disabled={currentPage <= 1}
+                className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-medium border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+                title="Previous page"
+              >
+                <ChevronLeft className="h-3.5 w-3.5" />
+                <span className="hidden sm:inline">Prev</span>
+              </button>
+
+              {/* Page Number Buttons */}
+              {(() => {
+                if (totalPages <= 7) {
+                  return Array.from({ length: totalPages }, (_, i) => i + 1).map((p) => (
+                    <button
+                      key={p}
+                      onClick={() => onPageChange(p)}
+                      className={`min-w-8 h-8 px-2 rounded-lg text-xs font-medium transition-colors ${
+                        currentPage === p
+                          ? "bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-bold shadow-sm"
+                          : "border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800"
+                      }`}
+                    >
+                      {p}
+                    </button>
+                  ));
+                }
+
+                const pages: (number | string)[] = [];
+                pages.push(1);
+                if (currentPage > 3) pages.push("ellipsis-1");
+                const start = Math.max(2, currentPage - 1);
+                const end = Math.min(totalPages - 1, currentPage + 1);
+                for (let i = start; i <= end; i++) {
+                  pages.push(i);
+                }
+                if (currentPage < totalPages - 2) pages.push("ellipsis-2");
+                pages.push(totalPages);
+
+                return pages.map((p, idx) => {
+                  if (typeof p === "string") {
+                    return (
+                      <span key={`dots-${idx}`} className="px-1 text-slate-400 text-xs">
+                        ...
+                      </span>
+                    );
+                  }
+                  return (
+                    <button
+                      key={p}
+                      onClick={() => onPageChange(p)}
+                      className={`min-w-8 h-8 px-2 rounded-lg text-xs font-medium transition-colors ${
+                        currentPage === p
+                          ? "bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-bold shadow-sm"
+                          : "border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800"
+                      }`}
+                    >
+                      {p}
+                    </button>
+                  );
+                });
+              })()}
+
+              {/* Next Page Button */}
+              <button
+                onClick={() => onPageChange(Math.min(totalPages, currentPage + 1))}
+                disabled={currentPage >= totalPages}
+                className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-medium border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+                title="Next page"
+              >
+                <span className="hidden sm:inline">Next</span>
+                <ChevronRight className="h-3.5 w-3.5" />
+              </button>
+
+              {/* Quick Jump Input */}
+              {totalPages > 5 && (
+                <form
+                  onSubmit={(e) => {
+                    e.preventDefault();
+                    const p = parseInt(jumpPage, 10);
+                    if (!isNaN(p) && p >= 1 && p <= totalPages) {
+                      onPageChange(p);
+                      setJumpPage("");
+                    }
+                  }}
+                  className="flex items-center gap-1 ml-2"
+                >
+                  <input
+                    type="number"
+                    min={1}
+                    max={totalPages}
+                    placeholder="Go to"
+                    value={jumpPage}
+                    onChange={(e) => setJumpPage(e.target.value)}
+                    className="w-14 h-8 px-2 text-xs rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 focus:outline-none focus:border-sky-500"
+                  />
+                  <button
+                    type="submit"
+                    className="h-8 px-2 text-xs rounded-lg bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 font-medium transition-colors"
+                  >
+                    Go
+                  </button>
+                </form>
+              )}
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
