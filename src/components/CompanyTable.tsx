@@ -129,10 +129,27 @@ export const CompanyTable: React.FC<TableProps> = ({
                         )}
                         {topSignal ? (
                           <div>
-                            <span className="inline-flex items-center gap-1 text-xs font-semibold text-sky-700 dark:text-sky-300 bg-sky-50 dark:bg-sky-950/50 px-2 py-0.5 rounded-md border border-sky-200/70 dark:border-sky-900/40 truncate max-w-xs">
-                              <Sparkles className="h-3 w-3 shrink-0 text-sky-500" />
-                              <span className="truncate">{topSignal.headline}</span>
-                            </span>
+                            {topSignal.type === "CVE_VULNERABILITY" ? (
+                              <span className="inline-flex items-center gap-1 text-xs font-bold text-rose-700 dark:text-rose-300 bg-rose-50 dark:bg-rose-950/60 px-2 py-0.5 rounded-md border border-rose-200 dark:border-rose-900/40 truncate max-w-xs">
+                                <ShieldAlert className="h-3 w-3 shrink-0 text-rose-500" />
+                                <span className="truncate">{topSignal.headline}</span>
+                              </span>
+                            ) : topSignal.type === "EXPIRED_SSL" ? (
+                              <span className="inline-flex items-center gap-1 text-xs font-bold text-amber-700 dark:text-amber-300 bg-amber-50 dark:bg-amber-950/60 px-2 py-0.5 rounded-md border border-amber-200 dark:border-amber-900/40 truncate max-w-xs">
+                                <Sparkles className="h-3 w-3 shrink-0 text-amber-500" />
+                                <span className="truncate">{topSignal.headline}</span>
+                              </span>
+                            ) : topSignal.type === "DATABASE_EXPOSURE" ? (
+                              <span className="inline-flex items-center gap-1 text-xs font-bold text-orange-700 dark:text-orange-300 bg-orange-50 dark:bg-orange-950/60 px-2 py-0.5 rounded-md border border-orange-200 dark:border-orange-900/40 truncate max-w-xs">
+                                <ShieldAlert className="h-3 w-3 shrink-0 text-orange-500" />
+                                <span className="truncate">{topSignal.headline}</span>
+                              </span>
+                            ) : (
+                              <span className="inline-flex items-center gap-1 text-xs font-semibold text-sky-700 dark:text-sky-300 bg-sky-50 dark:bg-sky-950/50 px-2 py-0.5 rounded-md border border-sky-200/70 dark:border-sky-900/40 truncate max-w-xs">
+                                <Sparkles className="h-3 w-3 shrink-0 text-sky-500" />
+                                <span className="truncate">{topSignal.headline}</span>
+                              </span>
+                            )}
                             <p className="text-[11px] text-slate-500 dark:text-slate-400 line-clamp-1 leading-normal mt-0.5">
                               {topSignal.description}
                             </p>

@@ -176,7 +176,8 @@ ${customizationBlock}
 1. Never use generic buzzwords ("game-changer", "revolutionary", "hope this email finds you well", "synergy").
 2. Anchor to Real Signals: Reference their specific cloud stack (${cloudEnv}), dev growth (+${company.engineering_growth_6m_pct || 25}%), compliance mandates (${compMandates}), and security team size (${company.security_headcount ?? 0} dedicated staff).
 3. Low-friction interest CTA (e.g., "Open to seeing a 2-min breakdown of how peer teams handled this?").
-4. Output ONLY valid JSON:
+4. Technical Grounding: If Top Signals mentions specific CVEs (e.g. CVE-2023-44487), expired SSL certificates, or exposed database/admin ports, weave them naturally into the email opening as the primary observation trigger.
+5. Output ONLY valid JSON:
 {
   "email": {
     "subject": "<Compelling lowercase or natural subject under 6 words>",

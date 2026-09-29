@@ -168,33 +168,56 @@ export const FilterBar: React.FC<FilterBarProps> = ({
           </div>
 
           {/* Buying Intent Triggers */}
-          <div className="flex items-center gap-2 flex-wrap">
+          <div className="flex items-center gap-1.5 flex-wrap">
             <span className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider mr-1 hidden md:inline">
-              Triggers:
+              Threat Signals:
             </span>
+
+            <button
+              onClick={() => handleSignal("CVE_VULNERABILITY")}
+              className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs border transition-colors duration-150 active:scale-[0.97] outline-none focus:outline-none ${
+                filters.selectedSignalType === "CVE_VULNERABILITY"
+                  ? "bg-rose-600 text-white font-semibold border-rose-600 shadow-sm"
+                  : "bg-slate-100 dark:bg-slate-800 text-rose-700 dark:text-rose-400 hover:bg-rose-50 dark:hover:bg-slate-700 border-transparent"
+              }`}
+            >
+              <ShieldAlert className="h-3 w-3" />
+              <span>Active CVEs (580)</span>
+            </button>
+
+            <button
+              onClick={() => handleSignal("EXPIRED_SSL")}
+              className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs border transition-colors duration-150 active:scale-[0.97] outline-none focus:outline-none ${
+                filters.selectedSignalType === "EXPIRED_SSL"
+                  ? "bg-amber-600 text-white font-semibold border-amber-600 shadow-sm"
+                  : "bg-slate-100 dark:bg-slate-800 text-amber-700 dark:text-amber-300 hover:bg-amber-50 dark:hover:bg-slate-700 border-transparent"
+              }`}
+            >
+              <Sparkles className="h-3 w-3" />
+              <span>Expired SSL (459)</span>
+            </button>
+
+            <button
+              onClick={() => handleSignal("DATABASE_EXPOSURE")}
+              className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs border transition-colors duration-150 active:scale-[0.97] outline-none focus:outline-none ${
+                filters.selectedSignalType === "DATABASE_EXPOSURE"
+                  ? "bg-orange-600 text-white font-semibold border-orange-600 shadow-sm"
+                  : "bg-slate-100 dark:bg-slate-800 text-orange-700 dark:text-orange-400 hover:bg-orange-50 dark:hover:bg-slate-700 border-transparent"
+              }`}
+            >
+              <ShieldAlert className="h-3 w-3" />
+              <span>Exposed DB (41)</span>
+            </button>
 
             <button
               onClick={() => handleSignal("SECURITY_DEBT_DISPARITY")}
               className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs border transition-colors duration-150 active:scale-[0.97] outline-none focus:outline-none ${
                 filters.selectedSignalType === "SECURITY_DEBT_DISPARITY"
-                  ? "bg-blue-600 text-white font-semibold border-blue-600"
+                  ? "bg-blue-600 text-white font-semibold border-blue-600 shadow-sm"
                   : "bg-slate-100 dark:bg-slate-800 text-blue-700 dark:text-blue-300 hover:bg-blue-50 dark:hover:bg-slate-700 border-transparent"
               }`}
             >
-              <ShieldAlert className="h-3 w-3" />
               <span>Dev Growth + 0 SecOps</span>
-            </button>
-
-            <button
-              onClick={() => handleSignal("COMPLIANCE_DEADLINE")}
-              className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs border transition-colors duration-150 active:scale-[0.97] outline-none focus:outline-none ${
-                filters.selectedSignalType === "COMPLIANCE_DEADLINE"
-                  ? "bg-emerald-600 text-white font-semibold border-emerald-600"
-                  : "bg-slate-100 dark:bg-slate-800 text-emerald-700 dark:text-emerald-300 hover:bg-emerald-50 dark:hover:bg-slate-700 border-transparent"
-              }`}
-            >
-              <Sparkles className="h-3 w-3" />
-              <span>Upcoming Audit / Mandate</span>
             </button>
           </div>
         </div>
