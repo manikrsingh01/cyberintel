@@ -1,5 +1,5 @@
 import { getRequestContext } from "@cloudflare/next-on-pages";
-import { Company, TelemetryTrace } from "./types";
+import { Company, TelemetryTrace, FilterCounts } from "./types";
 
 export interface D1Database {
   prepare(query: string): {
@@ -109,9 +109,62 @@ export async function getTracesFromD1(db: D1Database, limit: number = 100): Prom
 }
 
 /**
- * Fetch all companies from Cloudflare D1 database
+ * Fetch stats across all 50,000+ companies from Cloudflare D1
  */
-export async function getCompaniesFromD1(db: D1Database): Promise<Company[]> {
+export async function getCompanyStatsFromD1(db: D1Database): Promise<FilterCounts> {
+  try {
+    const { results } = await db
+      .prepare(
+        `SELECT 
+           COUNT(*) as total,
+           SUM(CASE WHEN risk_tier = 'TIER_1_CRITICAL' THEN 1 ELSE 0 END) as tier1,
+           SUM(CASE WHEN risk_tier = 'TIER_2_MODERATE' THEN 1 ELSE 0 END) as tier2,
+           SUM(CASE WHEN risk_tier = 'TIER_3_LOW' THEN 1 ELSE 0 END) as tier3,
+           SUM(CASE WHEN risk_tier = 'DISQUALIFIED' THEN 1 ELSE 0 END) as disqualified,
+           SUM(CASE WHEN buying_signals LIKE '%CVE_VULNERABILITY%' THEN 1 ELSE 0 END) as cveCount,
+           SUM(CASE WHEN buying_signals LIKE '%EXPIRED_SSL%' THEN 1 ELSE 0 END) as sslCount,
+           SUM(CASE WHEN buying_signals LIKE '%DATABASE_EXPOSURE%' THEN 1 ELSE 0 END) as dbCount,
+           SUM(CASE WHEN buying_signals LIKE '%SECURITY_DEBT_DISPARITY%' THEN 1 ELSE 0 END) as devGrowthCount
+         FROM companies`
+      )
+      .all<any>();
+
+    const row = results?.[0] || {};
+    return {
+      total: Number(row.total) || 0,
+      tier1: Number(row.tier1) || 0,
+      tier2: Number(row.tier2) || 0,
+      tier3: Number(row.tier3) || 0,
+      disqualified: Number(row.disqualified) || 0,
+      cveCount: Number(row.cveCount) || 0,
+      sslCount: Number(row.sslCount) || 0,
+      dbCount: Number(row.dbCount) || 0,
+      devGrowthCount: Number(row.devGrowthCount) || 0,
+    };
+  } catch (err) {
+    console.error("Failed to query company stats from Cloudflare D1:", err);
+    return {
+      total: 0,
+      tier1: 0,
+      tier2: 0,
+      tier3: 0,
+      disqualified: 0,
+      cveCount: 0,
+      sslCount: 0,
+      dbCount: 0,
+      devGrowthCount: 0,
+    };
+  }
+}
+
+/**
+ * Fetch companies with server-side pagination from Cloudflare D1 database
+ */
+export async function getCompaniesFromD1(
+  db: D1Database,
+  limit: number = 1000,
+  offset: number = 0
+): Promise<Company[]> {
   try {
     const { results } = await db
       .prepare(
@@ -122,8 +175,10 @@ export async function getCompaniesFromD1(db: D1Database): Promise<Company[]> {
                 sales_battlecard, cyber_risk_score, risk_tier, buying_signals, 
                 target_buyer, rationale
          FROM companies
-         ORDER BY cyber_risk_score DESC`
+         ORDER BY cyber_risk_score DESC
+         LIMIT ? OFFSET ?`
       )
+      .bind(limit, offset)
       .all<any>();
 
     if (!results || results.length === 0) return [];

@@ -38,6 +38,8 @@ export default function DashboardPage() {
     selectedSignalType: ""
   });
 
+  const [apiCounts, setApiCounts] = useState<FilterCounts | null>(null);
+
   // Fetch live companies from Cloudflare D1 on mount
   useEffect(() => {
     fetch("/api/companies")
@@ -45,6 +47,9 @@ export default function DashboardPage() {
       .then((data) => {
         if (data.success && Array.isArray(data.companies) && data.companies.length > 0) {
           setCompanies(data.companies);
+        }
+        if (data.counts) {
+          setApiCounts(data.counts);
         }
       })
       .catch((err) => {
@@ -133,8 +138,11 @@ export default function DashboardPage() {
     }
   };
 
-  // Dynamic filter counts computed across all companies
+  // Dynamic filter counts computed across all companies (with live D1 stats support)
   const counts: FilterCounts = useMemo(() => {
+    if (apiCounts && apiCounts.total > 0) {
+      return apiCounts;
+    }
     return {
       total: companies.length,
       tier1: companies.filter((c) => c.risk_tier === "TIER_1_CRITICAL").length,
@@ -156,7 +164,7 @@ export default function DashboardPage() {
           (c.engineering_growth_6m_pct > 25 && c.security_headcount === 0)
       ).length,
     };
-  }, [companies]);
+  }, [companies, apiCounts]);
 
   // Paginated companies: Limit 20 per page for smooth load & rendering
   const totalPages = Math.ceil(filteredCompanies.length / pageSize) || 1;
@@ -205,7 +213,7 @@ export default function DashboardPage() {
       {/* Main Content Area */}
       <main className="flex-1 pb-16">
         {/* KPI Metrics Summary */}
-        <MetricsSummary companies={companies} />
+        <MetricsSummary companies={companies} counts={counts} />
 
         {/* Search, Tier & Signal Filters with real dynamic counts */}
         <FilterBar

@@ -1,16 +1,17 @@
 import React from "react";
-import { Company } from "@/lib/types";
+import { Company, FilterCounts } from "@/lib/types";
 import { Building2, AlertTriangle, ShieldCheck, Scale } from "lucide-react";
 
 interface MetricsProps {
   companies: Company[];
+  counts?: FilterCounts;
 }
 
-export const MetricsSummary: React.FC<MetricsProps> = ({ companies }) => {
-  const total = companies.length;
-  const tier1Count = companies.filter(c => c.risk_tier === "TIER_1_CRITICAL").length;
-  const avgScore = total > 0
-    ? Math.round(companies.reduce((acc, c) => acc + c.cyber_risk_score, 0) / total)
+export const MetricsSummary: React.FC<MetricsProps> = ({ companies, counts }) => {
+  const total = counts?.total || companies.length;
+  const tier1Count = counts?.tier1 !== undefined ? counts.tier1 : companies.filter(c => c.risk_tier === "TIER_1_CRITICAL").length;
+  const avgScore = companies.length > 0
+    ? Math.round(companies.reduce((acc, c) => acc + c.cyber_risk_score, 0) / companies.length)
     : 0;
   const compliancePressureCount = companies.filter(c => c.compliance_mandates.length > 0).length;
 
