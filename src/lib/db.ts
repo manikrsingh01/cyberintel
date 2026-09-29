@@ -162,7 +162,7 @@ export async function getCompanyStatsFromD1(db: D1Database): Promise<FilterCount
  */
 export async function getCompaniesFromD1(
   db: D1Database,
-  limit: number = 1000,
+  limit: number = 5000,
   offset: number = 0
 ): Promise<Company[]> {
   try {

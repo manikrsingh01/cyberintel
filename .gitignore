@@ -40,3 +40,4 @@ skills/
 # Large Datasets & Batches
 Input_data/
 data/chunks_50k/
+data/*.sql

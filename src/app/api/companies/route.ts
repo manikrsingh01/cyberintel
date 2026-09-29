@@ -11,7 +11,7 @@ let inMemoryCompanies: Company[] = [...initialCompanies];
 export async function GET(req: Request) {
   try {
     const { searchParams } = new URL(req.url);
-    const limit = Math.min(parseInt(searchParams.get("limit") || "1000", 10), 1000);
+    const limit = Math.min(parseInt(searchParams.get("limit") || "5000", 10), 10000);
     const page = Math.max(parseInt(searchParams.get("page") || "1", 10), 1);
     const offset = (page - 1) * limit;
 
