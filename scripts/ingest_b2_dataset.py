@@ -361,6 +361,7 @@ def main():
             growth = c["engineering_growth_6m_pct"]
             sec_cnt = c["security_headcount"]
             debt = c["security_debt_ratio"]
+            recent_trig = c.get("recent_triggers", "").replace("'", "''")
             acv = c["estimated_acv"].replace("'", "''")
             days = c["audit_countdown_days"]
             label = c["audit_countdown_label"].replace("'", "''")
@@ -374,11 +375,11 @@ def main():
             f.write(
                 f"INSERT INTO companies (id, name, domain, industry, headcount, location, annual_revenue, "
                 f"cloud_environment, tech_stack, compliance_mandates, engineering_growth_6m_pct, "
-                f"security_headcount, security_debt_ratio, estimated_acv, audit_countdown_days, "
+                f"security_headcount, security_debt_ratio, recent_triggers, estimated_acv, audit_countdown_days, "
                 f"audit_countdown_label, sales_battlecard, cyber_risk_score, risk_tier, buying_signals, "
                 f"target_buyer, rationale) VALUES ("
                 f"'{c_id}', '{name}', '{domain}', '{industry}', {headcount}, '{location}', '{revenue}', "
-                f"'{cloud}', '{tech}', '{comp}', {growth}, {sec_cnt}, {debt}, '{acv}', {days}, "
+                f"'{cloud}', '{tech}', '{comp}', {growth}, {sec_cnt}, {debt}, '{recent_trig}', '{acv}', {days}, "
                 f"'{label}', '{battlecard}', {score}, '{tier}', '{signals}', '{buyer}', '{rationale}');\n"
             )
     print(f"[✓] Generated SQL seed file: {OUTPUT_SQL} with {len(top_1000)} rows.")

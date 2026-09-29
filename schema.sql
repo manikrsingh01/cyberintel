@@ -16,6 +16,7 @@ CREATE TABLE IF NOT EXISTS companies (
   engineering_growth_6m_pct REAL NOT NULL,
   security_headcount INTEGER NOT NULL,
   security_debt_ratio REAL NOT NULL,
+  recent_triggers TEXT,
   estimated_acv TEXT NOT NULL,
   audit_countdown_days INTEGER,
   audit_countdown_label TEXT,

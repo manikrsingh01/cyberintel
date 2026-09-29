@@ -5,7 +5,7 @@
     "domain": "googleusercontent.com",
     "industry": "Enterprise Services",
     "headcount": 557,
-    "location": "Washington, United States",
+    "location": "Lappeenranta, United States",
     "annual_revenue": "$100M - $195M",
     "cloud_environment": "Google",
     "tech_stack": [
@@ -78,7 +78,7 @@
     "domain": "your-server.de",
     "industry": "Cloud & B2B SaaS",
     "headcount": 613,
-    "location": "Falkenstein, Germany",
+    "location": "Singapore, Germany",
     "annual_revenue": "$110M - $215M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -151,7 +151,7 @@
     "domain": "linodeusercontent.com",
     "industry": "Enterprise Services",
     "headcount": 555,
-    "location": "Mumbai, United States",
+    "location": "Chicago, United States",
     "annual_revenue": "$100M - $194M",
     "cloud_environment": "Linode",
     "tech_stack": [
@@ -224,7 +224,7 @@
     "domain": "vultrusercontent.com",
     "industry": "Enterprise Services",
     "headcount": 493,
-    "location": "Benoni, Japan",
+    "location": "Honolulu, Japan",
     "annual_revenue": "$89M - $173M",
     "cloud_environment": "Vultr",
     "tech_stack": [
@@ -297,7 +297,7 @@
     "domain": "contaboserver.net",
     "industry": "Cloud & B2B SaaS",
     "headcount": 123,
-    "location": "Singapore, Germany",
+    "location": "New York City, Germany",
     "annual_revenue": "$22M - $43M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -370,7 +370,7 @@
     "domain": "secureserver.net",
     "industry": "Cloud & B2B SaaS",
     "headcount": 878,
-    "location": "Tempe, United States",
+    "location": "Singapore, United States",
     "annual_revenue": "$158M - $307M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -516,7 +516,7 @@
     "domain": "pbiaas.com",
     "industry": "Cloud & B2B SaaS",
     "headcount": 184,
-    "location": "Berlin, Germany",
+    "location": "New York City, Germany",
     "annual_revenue": "$33M - $64M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -662,7 +662,7 @@
     "domain": "sakura.ne.jp",
     "industry": "Cloud & B2B SaaS",
     "headcount": 363,
-    "location": "Kobe, Japan",
+    "location": "Niiza, Japan",
     "annual_revenue": "$65M - $127M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -735,7 +735,7 @@
     "domain": "ovh.net",
     "industry": "Cloud & B2B SaaS",
     "headcount": 751,
-    "location": "Nancy, Poland",
+    "location": "Marseille, Poland",
     "annual_revenue": "$135M - $263M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -808,7 +808,7 @@
     "domain": "nazwa.pl",
     "industry": "Cloud & B2B SaaS",
     "headcount": 856,
-    "location": "London, Poland",
+    "location": "Krak\u00f3w, Poland",
     "annual_revenue": "$154M - $300M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -875,7 +875,7 @@
     "domain": "spectrum.com",
     "industry": "Cloud & B2B SaaS",
     "headcount": 443,
-    "location": "Northport, United States",
+    "location": "Hogansville, United States",
     "annual_revenue": "$80M - $155M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -942,7 +942,7 @@
     "domain": "scw.cloud",
     "industry": "Cloud & B2B SaaS",
     "headcount": 109,
-    "location": "Avernes, France",
+    "location": "Strasbourg, France",
     "annual_revenue": "$20M - $38M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -1009,7 +1009,7 @@
     "domain": "verizon.net",
     "industry": "Cloud & B2B SaaS",
     "headcount": 349,
-    "location": "Woodmere, United States",
+    "location": "Ashburn, United States",
     "annual_revenue": "$63M - $122M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -1076,7 +1076,7 @@
     "domain": "comcastbusiness.net",
     "industry": "Cloud & B2B SaaS",
     "headcount": 340,
-    "location": "Savannah, United States",
+    "location": "Chicago, United States",
     "annual_revenue": "$61M - $119M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -1143,7 +1143,7 @@
     "domain": "transip.net",
     "industry": "Cloud & B2B SaaS",
     "headcount": 337,
-    "location": "Lelystad, Netherlands",
+    "location": "Heelsum, Netherlands",
     "annual_revenue": "$61M - $118M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -1210,7 +1210,7 @@
     "domain": "t-ipconnect.de",
     "industry": "Cloud & B2B SaaS",
     "headcount": 566,
-    "location": "Holtgast, Germany",
+    "location": "Magdeburg, Germany",
     "annual_revenue": "$102M - $198M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -1277,7 +1277,7 @@
     "domain": "hosteurope.de",
     "industry": "Cloud & B2B SaaS",
     "headcount": 544,
-    "location": "Coburg, Germany",
+    "location": "K\u00f6ln, Germany",
     "annual_revenue": "$98M - $190M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -1343,7 +1343,7 @@
     "domain": "163data.com.cn",
     "industry": "Cloud & B2B SaaS",
     "headcount": 379,
-    "location": "Jiujiang, China",
+    "location": "Shenzhen, China",
     "annual_revenue": "$68M - $133M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -1410,7 +1410,7 @@
     "domain": "hostwindsdns.com",
     "industry": "Cloud & B2B SaaS",
     "headcount": 880,
-    "location": "Dallas, United States",
+    "location": "Seattle, United States",
     "annual_revenue": "$158M - $308M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -1477,7 +1477,7 @@
     "domain": "proxad.net",
     "industry": "Cloud & B2B SaaS",
     "headcount": 222,
-    "location": "Ch\u00e2teaubourg, France",
+    "location": "Fontenay-sous-Bois, France",
     "annual_revenue": "$40M - $78M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -1544,7 +1544,7 @@
     "domain": "aruba.it",
     "industry": "Cloud & B2B SaaS",
     "headcount": 835,
-    "location": "Bergamo, Italy",
+    "location": "Arezzo, Italy",
     "annual_revenue": "$150M - $292M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -1611,7 +1611,7 @@
     "domain": "vnpt.vn",
     "industry": "Cloud & B2B SaaS",
     "headcount": 775,
-    "location": "H\u00f2a B\u00ecnh, Viet Nam",
+    "location": "V\u0129nh Y\u00ean, Viet Nam",
     "annual_revenue": "$140M - $271M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -1745,7 +1745,7 @@
     "domain": "btc-net.bg",
     "industry": "Cloud & B2B SaaS",
     "headcount": 127,
-    "location": "Smolyan, Bulgaria",
+    "location": "Varna, Bulgaria",
     "annual_revenue": "$23M - $44M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -1875,7 +1875,7 @@
     "domain": "example.com",
     "industry": "Cloud & B2B SaaS",
     "headcount": 308,
-    "location": "Santa Clara, United Kingdom",
+    "location": "Naaldwijk, United Kingdom",
     "annual_revenue": "$55M - $108M",
     "cloud_environment": "Amazon, DigitalOcean, Oracle Cloud Infrastructure",
     "tech_stack": [
@@ -1942,7 +1942,7 @@
     "domain": "hinet.net",
     "industry": "Cloud & B2B SaaS",
     "headcount": 104,
-    "location": "Jincheng, Taiwan",
+    "location": "Yilan, Taiwan",
     "annual_revenue": "$19M - $36M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -2003,7 +2003,7 @@
     "domain": "nuro.jp",
     "industry": "Cloud & B2B SaaS",
     "headcount": 761,
-    "location": "Naka, Japan",
+    "location": "Inagi, Japan",
     "annual_revenue": "$137M - $266M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -2064,7 +2064,7 @@
     "domain": "cox.net",
     "industry": "Cloud & B2B SaaS",
     "headcount": 748,
-    "location": "Las Vegas, United States",
+    "location": "Baton Rouge, United States",
     "annual_revenue": "$135M - $262M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -2125,7 +2125,7 @@
     "domain": "vivozap.com.br",
     "industry": "Cloud & B2B SaaS",
     "headcount": 601,
-    "location": "Curitiba, Brazil",
+    "location": "Cachoeirinha, Brazil",
     "annual_revenue": "$108M - $210M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -2184,7 +2184,7 @@
     "domain": "fornex.cloud",
     "industry": "Cloud & B2B SaaS",
     "headcount": 434,
-    "location": "Turlock, Ireland",
+    "location": "Dublin, Ireland",
     "annual_revenue": "$78M - $152M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -2300,7 +2300,7 @@
     "domain": "16clouds.com",
     "industry": "Cloud & B2B SaaS",
     "headcount": 313,
-    "location": "Tokyo, United States",
+    "location": "Vancouver, United States",
     "annual_revenue": "$56M - $110M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -2361,7 +2361,7 @@
     "domain": "comcast.net",
     "industry": "Cloud & B2B SaaS",
     "headcount": 314,
-    "location": "Woodbury, United States",
+    "location": "Vancouver, United States",
     "annual_revenue": "$57M - $110M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -2422,7 +2422,7 @@
     "domain": "colocrossing.com",
     "industry": "Cloud & B2B SaaS",
     "headcount": 861,
-    "location": "Santa Clara, United States",
+    "location": "Elk Grove Village, United States",
     "annual_revenue": "$155M - $301M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -2483,7 +2483,7 @@
     "domain": "rdsnet.ro",
     "industry": "Cloud & B2B SaaS",
     "headcount": 122,
-    "location": "Bac\u0103u, Romania",
+    "location": "Bucharest, Romania",
     "annual_revenue": "$22M - $43M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -2541,7 +2541,7 @@
     "domain": "bluehost.com",
     "industry": "Cloud & B2B SaaS",
     "headcount": 430,
-    "location": "Atlanta, United States",
+    "location": "Tabiona, United States",
     "annual_revenue": "$77M - $150M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -2602,7 +2602,7 @@
     "domain": "undefined.hostname.localhost",
     "industry": "Cloud & B2B SaaS",
     "headcount": 365,
-    "location": "Ukrainka, Turkey",
+    "location": "Rawalpindi, Turkey",
     "annual_revenue": "$66M - $128M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -2660,7 +2660,7 @@
     "domain": "sbcglobal.net",
     "industry": "Cloud & B2B SaaS",
     "headcount": 505,
-    "location": "Baton Rouge, United States",
+    "location": "Lawrenceville, United States",
     "annual_revenue": "$91M - $177M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -2721,7 +2721,7 @@
     "domain": "inmotionhosting.com",
     "industry": "Cloud & B2B SaaS",
     "headcount": 351,
-    "location": "Los Angeles, United States",
+    "location": "Lelystad, United States",
     "annual_revenue": "$63M - $123M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -2781,7 +2781,7 @@
     "domain": "dsl.net",
     "industry": "Cloud & B2B SaaS",
     "headcount": 741,
-    "location": "Los Angeles, United States",
+    "location": "Grantsburg, United States",
     "annual_revenue": "$133M - $259M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -3013,7 +3013,7 @@
     "domain": "ono.com",
     "industry": "Cloud & B2B SaaS",
     "headcount": 742,
-    "location": "Sant Joan d'Alacant, Spain",
+    "location": "Elche, Spain",
     "annual_revenue": "$134M - $260M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -3133,7 +3133,7 @@
     "domain": "ctinets.com",
     "industry": "Cloud & B2B SaaS",
     "headcount": 322,
-    "location": "Tung Chung, Hong Kong",
+    "location": "Aberdeen, Hong Kong",
     "annual_revenue": "$58M - $113M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -3252,7 +3252,7 @@
     "domain": "globalcapacity.com",
     "industry": "Cloud & B2B SaaS",
     "headcount": 181,
-    "location": "San Jose, United States",
+    "location": "New York City, United States",
     "annual_revenue": "$33M - $63M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -3426,7 +3426,7 @@
     "domain": "kpn.net",
     "industry": "Cloud & B2B SaaS",
     "headcount": 747,
-    "location": "Nijmegen, Netherlands",
+    "location": "Boxtel, Netherlands",
     "annual_revenue": "$134M - $261M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -3487,7 +3487,7 @@
     "domain": "sharktech.net",
     "industry": "Cloud & B2B SaaS",
     "headcount": 525,
-    "location": "Los Angeles, United States",
+    "location": "Chicago, United States",
     "annual_revenue": "$94M - $184M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -3547,7 +3547,7 @@
     "domain": "gvt.net.br",
     "industry": "Cloud & B2B SaaS",
     "headcount": 163,
-    "location": "Uberl\u00e2ndia, Brazil",
+    "location": "Maring\u00e1, Brazil",
     "annual_revenue": "$29M - $57M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -3605,7 +3605,7 @@
     "domain": "ramnode.com",
     "industry": "Cloud & B2B SaaS",
     "headcount": 302,
-    "location": "Lelystad, United States",
+    "location": "New York City, United States",
     "annual_revenue": "$54M - $106M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -3721,7 +3721,7 @@
     "domain": "cloudfront.net",
     "industry": "Enterprise Services",
     "headcount": 656,
-    "location": "Rio de Janeiro, United States",
+    "location": "Pittsburgh, United States",
     "annual_revenue": "$118M - $230M",
     "cloud_environment": "Amazon",
     "tech_stack": [
@@ -4024,7 +4024,7 @@
     "domain": "onlinehome-server.info",
     "industry": "Cloud & B2B SaaS",
     "headcount": 597,
-    "location": "Stuttgart, Germany",
+    "location": "Filderstadt, Germany",
     "annual_revenue": "$107M - $209M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -4175,7 +4175,7 @@
     "domain": "asahi-net.or.jp",
     "industry": "Cloud & B2B SaaS",
     "headcount": 620,
-    "location": "Asagaya-minami, Japan",
+    "location": "Kawasaki, Japan",
     "annual_revenue": "$112M - $217M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -4275,7 +4275,7 @@
     "domain": "opentext.com",
     "industry": "Cloud & B2B SaaS",
     "headcount": 447,
-    "location": "Sydney, United States",
+    "location": "Lelystad, United States",
     "annual_revenue": "$80M - $156M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -4529,7 +4529,7 @@
     "domain": "domainserver.ne.jp",
     "industry": "Cloud & B2B SaaS",
     "headcount": 161,
-    "location": "Kobe, Japan",
+    "location": "Tokyo, Japan",
     "annual_revenue": "$29M - $56M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -4730,7 +4730,7 @@
     "domain": "da.direct",
     "industry": "Cloud & B2B SaaS",
     "headcount": 73,
-    "location": "Santa Clara, Estonia",
+    "location": "Secaucus, Estonia",
     "annual_revenue": "$13M - $26M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -4931,7 +4931,7 @@
     "domain": "latimes.com",
     "industry": "Enterprise Services",
     "headcount": 311,
-    "location": "San Jose, United States",
+    "location": "Boardman, United States",
     "annual_revenue": "$56M - $109M",
     "cloud_environment": "Amazon",
     "tech_stack": [
@@ -5182,7 +5182,7 @@
     "domain": "ptrcloud.net",
     "industry": "Cloud & B2B SaaS",
     "headcount": 445,
-    "location": "Maebashi, Japan",
+    "location": "Tokyo, Japan",
     "annual_revenue": "$80M - $156M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -6199,7 +6199,7 @@
     "domain": "linode.com",
     "industry": "Enterprise Services",
     "headcount": 195,
-    "location": "Tokyo, United Kingdom",
+    "location": "Richardson, United Kingdom",
     "annual_revenue": "$35M - $68M",
     "cloud_environment": "Linode",
     "tech_stack": [
@@ -6257,7 +6257,7 @@
     "domain": "rogers.com",
     "industry": "Cloud & B2B SaaS",
     "headcount": 218,
-    "location": "London, Canada",
+    "location": "Brampton, Canada",
     "annual_revenue": "$39M - $76M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -6314,7 +6314,7 @@
     "domain": "rima-tde.net",
     "industry": "Cloud & B2B SaaS",
     "headcount": 355,
-    "location": "Tomelloso, Spain",
+    "location": "Cornell\u00e0 de Llobregat, Spain",
     "annual_revenue": "$64M - $124M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -6476,7 +6476,7 @@
     "domain": "default-host.net",
     "industry": "Cloud & B2B SaaS",
     "headcount": 800,
-    "location": "Falkenstein, Ukraine",
+    "location": "Kyiv, Ukraine",
     "annual_revenue": "$144M - $280M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -6630,7 +6630,7 @@
     "domain": "hostserv.eu",
     "industry": "Cloud & B2B SaaS",
     "headcount": 353,
-    "location": "Z\u00fcrich, Switzerland",
+    "location": "Nottwil, Switzerland",
     "annual_revenue": "$64M - $124M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -6681,7 +6681,7 @@
     "domain": "as20676.net",
     "industry": "Cloud & B2B SaaS",
     "headcount": 891,
-    "location": "Frankfurt am Main, Germany",
+    "location": "K\u00f6ln, Germany",
     "annual_revenue": "$160M - $312M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -7039,7 +7039,7 @@
     "domain": "ktk-ip.de",
     "industry": "Cloud & B2B SaaS",
     "headcount": 884,
-    "location": "Leuterod, Germany",
+    "location": "Mannheim, Germany",
     "annual_revenue": "$159M - $309M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -8172,7 +8172,7 @@
     "domain": "flyio.net",
     "industry": "Cloud & B2B SaaS",
     "headcount": 115,
-    "location": "Washington, United States",
+    "location": "Chicago, United States",
     "annual_revenue": "$21M - $40M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -8294,7 +8294,7 @@
     "domain": "telefonica.de",
     "industry": "Cloud & B2B SaaS",
     "headcount": 492,
-    "location": "Oberhausen, Germany",
+    "location": "Essen, Germany",
     "annual_revenue": "$89M - $172M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -8345,7 +8345,7 @@
     "domain": "asianet.co.th",
     "industry": "Cloud & B2B SaaS",
     "headcount": 458,
-    "location": "Lop Buri, Thailand",
+    "location": "Surat Thani, Thailand",
     "annual_revenue": "$82M - $160M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -8399,7 +8399,7 @@
     "domain": "frontiernet.net",
     "industry": "Cloud & B2B SaaS",
     "headcount": 768,
-    "location": "Caldwell, United States",
+    "location": "Sun City Center, United States",
     "annual_revenue": "$138M - $269M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -8451,7 +8451,7 @@
     "domain": "fvds.ru",
     "industry": "Cloud & B2B SaaS",
     "headcount": 757,
-    "location": "Bucharest, Russian Federation",
+    "location": "Rasht, Russian Federation",
     "annual_revenue": "$136M - $265M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -8503,7 +8503,7 @@
     "domain": "ttnet.com.tr",
     "industry": "Cloud & B2B SaaS",
     "headcount": 395,
-    "location": "Istanbul, Turkey",
+    "location": "\u015eanl\u0131urfa, Turkey",
     "annual_revenue": "$71M - $138M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -8611,7 +8611,7 @@
     "domain": "fibertel.com.ar",
     "industry": "Cloud & B2B SaaS",
     "headcount": 662,
-    "location": "Santa Fe, Argentina",
+    "location": "Tandil, Argentina",
     "annual_revenue": "$119M - $232M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -8664,7 +8664,7 @@
     "domain": "virginm.net",
     "industry": "Cloud & B2B SaaS",
     "headcount": 332,
-    "location": "London, United Kingdom",
+    "location": "Cardiff, United Kingdom",
     "annual_revenue": "$60M - $116M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -8719,7 +8719,7 @@
     "domain": "us.com",
     "industry": "Cloud & B2B SaaS",
     "headcount": 642,
-    "location": "Bucharest, India",
+    "location": "Chicago, India",
     "annual_revenue": "$116M - $225M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -8823,7 +8823,7 @@
     "domain": "comunitel.net",
     "industry": "Cloud & B2B SaaS",
     "headcount": 544,
-    "location": "Barcelona, Spain",
+    "location": "Madrid, Spain",
     "annual_revenue": "$98M - $190M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -8874,7 +8874,7 @@
     "domain": "nt-isp.net",
     "industry": "Cloud & B2B SaaS",
     "headcount": 171,
-    "location": "Lop Buri, Thailand",
+    "location": "Hat Yai, Thailand",
     "annual_revenue": "$31M - $60M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -8925,7 +8925,7 @@
     "domain": "adinet.com.uy",
     "industry": "Cloud & B2B SaaS",
     "headcount": 473,
-    "location": "Maldonado, Uruguay",
+    "location": "Montevideo, Uruguay",
     "annual_revenue": "$85M - $166M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -8978,7 +8978,7 @@
     "domain": "test.com",
     "industry": "Cloud & B2B SaaS",
     "headcount": 858,
-    "location": "Lelystad, Netherlands",
+    "location": "Prague, Netherlands",
     "annual_revenue": "$154M - $300M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -9080,7 +9080,7 @@
     "domain": "mchsi.com",
     "industry": "Cloud & B2B SaaS",
     "headcount": 92,
-    "location": "Chatfield, United States",
+    "location": "New York City, United States",
     "annual_revenue": "$17M - $32M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -9132,7 +9132,7 @@
     "domain": "vsnl.net.in",
     "industry": "Cloud & B2B SaaS",
     "headcount": 280,
-    "location": "Pimpri, India",
+    "location": "Gurugram, India",
     "annual_revenue": "$50M - $98M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -9232,7 +9232,7 @@
     "domain": "claro.net.do",
     "industry": "Cloud & B2B SaaS",
     "headcount": 354,
-    "location": "Santo Domingo, Dominican Republic",
+    "location": "Santo Domingo Este, Dominican Republic",
     "annual_revenue": "$64M - $124M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -9282,7 +9282,7 @@
     "domain": "free.ds",
     "industry": "Cloud & B2B SaaS",
     "headcount": 724,
-    "location": "Sofiyivska Borschagivka, Ukraine",
+    "location": "Chicago, Ukraine",
     "annual_revenue": "$130M - $253M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -9333,7 +9333,7 @@
     "domain": "hostdzire.com",
     "industry": "Cloud & B2B SaaS",
     "headcount": 548,
-    "location": "Singapore, Singapore",
+    "location": "Lelystad, Singapore",
     "annual_revenue": "$99M - $192M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -9391,7 +9391,7 @@
     "domain": "orangecustomers.net",
     "industry": "Cloud & B2B SaaS",
     "headcount": 351,
-    "location": "Creutzwald, France",
+    "location": "Clamart, France",
     "annual_revenue": "$63M - $123M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -9443,7 +9443,7 @@
     "domain": "amazee.io",
     "industry": "Enterprise Services",
     "headcount": 84,
-    "location": "Tokyo, Germany",
+    "location": "Boardman, Germany",
     "annual_revenue": "$15M - $29M",
     "cloud_environment": "Amazon, Azure, Google",
     "tech_stack": [
@@ -9747,7 +9747,7 @@
     "domain": "salesforce.com",
     "industry": "Cloud & B2B SaaS",
     "headcount": 623,
-    "location": "Kobe, United States",
+    "location": "Chicago, United States",
     "annual_revenue": "$112M - $218M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -9800,7 +9800,7 @@
     "domain": "plesk.page",
     "industry": "Enterprise Services",
     "headcount": 197,
-    "location": "Shannon, United Kingdom",
+    "location": "Basildon, United Kingdom",
     "annual_revenue": "$35M - $69M",
     "cloud_environment": "DigitalOcean, Vultr",
     "tech_stack": [
@@ -10055,7 +10055,7 @@
     "domain": "sogetel.net",
     "industry": "Cloud & B2B SaaS",
     "headcount": 323,
-    "location": "Saint-Hyacinthe, Canada",
+    "location": "Beauceville, Canada",
     "annual_revenue": "$58M - $113M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -10108,7 +10108,7 @@
     "domain": "webhost1.net",
     "industry": "Cloud & B2B SaaS",
     "headcount": 381,
-    "location": "Yerevan, Netherlands",
+    "location": "Lelystad, Netherlands",
     "annual_revenue": "$69M - $133M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -10261,7 +10261,7 @@
     "domain": "nttpc.ne.jp",
     "industry": "Cloud & B2B SaaS",
     "headcount": 269,
-    "location": "Yokohama, Japan",
+    "location": "Sagamihara, Japan",
     "annual_revenue": "$48M - $94M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -10313,7 +10313,7 @@
     "domain": "akamaitechnologies.com",
     "industry": "Cloud & B2B SaaS",
     "headcount": 606,
-    "location": "Southfield, Japan",
+    "location": "Chicago, Japan",
     "annual_revenue": "$109M - $212M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -10623,7 +10623,7 @@
     "domain": "cprapid.com",
     "industry": "Enterprise Services",
     "headcount": 299,
-    "location": "Lelystad, United States",
+    "location": "New York City, United States",
     "annual_revenue": "$54M - $105M",
     "cloud_environment": "Amazon",
     "tech_stack": [
@@ -10676,7 +10676,7 @@
     "domain": "fastwebnet.it",
     "industry": "Cloud & B2B SaaS",
     "headcount": 537,
-    "location": "Milan, Italy",
+    "location": "Travagliato, Italy",
     "annual_revenue": "$97M - $188M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -10731,7 +10731,7 @@
     "domain": "optonline.net",
     "industry": "Cloud & B2B SaaS",
     "headcount": 552,
-    "location": "Woodmere, United States",
+    "location": "Manville, United States",
     "annual_revenue": "$99M - $193M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -10784,7 +10784,7 @@
     "domain": "incapsula.com",
     "industry": "Cloud & B2B SaaS",
     "headcount": 520,
-    "location": "Singapore, United States",
+    "location": "San Mateo, United States",
     "annual_revenue": "$94M - $182M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -10888,7 +10888,7 @@
     "domain": "eastlink.ca",
     "industry": "Cloud & B2B SaaS",
     "headcount": 296,
-    "location": "London, Canada",
+    "location": "Halifax, Canada",
     "annual_revenue": "$53M - $104M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -10990,7 +10990,7 @@
     "domain": "cantv.net",
     "industry": "Cloud & B2B SaaS",
     "headcount": 108,
-    "location": "Caracas, Venezuela, Bolivarian Republic of",
+    "location": "San Crist\u00f3bal, Venezuela, Bolivarian Republic of",
     "annual_revenue": "$19M - $38M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -11040,7 +11040,7 @@
     "domain": "webnx.com",
     "industry": "Cloud & B2B SaaS",
     "headcount": 108,
-    "location": "Los Angeles, United States",
+    "location": "Salt Lake City, United States",
     "annual_revenue": "$19M - $38M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -11175,7 +11175,7 @@
     "domain": "uw.edu.pl",
     "industry": "Cloud & B2B SaaS",
     "headcount": 61,
-    "location": "Falkenstein, Poland",
+    "location": "Warsaw, Poland",
     "annual_revenue": "$11M - $21M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -11711,7 +11711,7 @@
     "domain": "avigilon.com",
     "industry": "Enterprise Services",
     "headcount": 417,
-    "location": "Mountain View, Canada",
+    "location": "Montr\u00e9al, Canada",
     "annual_revenue": "$75M - $146M",
     "cloud_environment": "Amazon, Google",
     "tech_stack": [
@@ -11843,7 +11843,7 @@
     "domain": "paulmitchell.edu",
     "industry": "Enterprise Services",
     "headcount": 843,
-    "location": "San Francisco, United States",
+    "location": "Ashburn, United States",
     "annual_revenue": "$152M - $295M",
     "cloud_environment": "Amazon",
     "tech_stack": [
@@ -12020,7 +12020,7 @@
     "domain": "jazztel.es",
     "industry": "Cloud & B2B SaaS",
     "headcount": 229,
-    "location": "V\u00e9lez-M\u00e1laga, Spain",
+    "location": "Granada, Spain",
     "annual_revenue": "$41M - $80M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -12595,7 +12595,7 @@
     "domain": "myvps.jp",
     "industry": "Cloud & B2B SaaS",
     "headcount": 884,
-    "location": "Hachi\u014dji, Japan",
+    "location": "Tokyo, Japan",
     "annual_revenue": "$159M - $309M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -12906,7 +12906,7 @@
     "domain": "telemach.ba",
     "industry": "Cloud & B2B SaaS",
     "headcount": 271,
-    "location": "Sarajevo, Bosnia and Herzegovina",
+    "location": "Zenica, Bosnia and Herzegovina",
     "annual_revenue": "$49M - $95M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -13305,7 +13305,7 @@
     "domain": "baidu.com",
     "industry": "Cloud & B2B SaaS",
     "headcount": 77,
-    "location": "Foshan, China",
+    "location": "Shijiazhuang, China",
     "annual_revenue": "$14M - $27M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -13349,7 +13349,7 @@
     "domain": "sprious.com",
     "industry": "Cloud & B2B SaaS",
     "headcount": 349,
-    "location": "Los Angeles, United States",
+    "location": "New York City, United States",
     "annual_revenue": "$63M - $122M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -13526,7 +13526,7 @@
     "domain": "hopto.org",
     "industry": "Cloud & B2B SaaS",
     "headcount": 123,
-    "location": "Ho Chi Minh City, Viet Nam",
+    "location": "Frankfurt am Main, Viet Nam",
     "annual_revenue": "$22M - $43M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -13614,7 +13614,7 @@
     "domain": "arcor-ip.net",
     "industry": "Cloud & B2B SaaS",
     "headcount": 365,
-    "location": "Munich, Germany",
+    "location": "Bottrop, Germany",
     "annual_revenue": "$66M - $128M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -13925,7 +13925,7 @@
     "domain": "vermont.gov",
     "industry": "Cloud & B2B SaaS",
     "headcount": 352,
-    "location": "Suresnes, United States",
+    "location": "Baltimore, United States",
     "annual_revenue": "$63M - $123M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -14146,7 +14146,7 @@
     "domain": "usc.edu",
     "industry": "Enterprise Services",
     "headcount": 740,
-    "location": "El Segundo, United States",
+    "location": "Boardman, United States",
     "annual_revenue": "$133M - $259M",
     "cloud_environment": "Amazon, Azure",
     "tech_stack": [
@@ -14499,7 +14499,7 @@
     "domain": "tplinkmodem.net",
     "industry": "Cloud & B2B SaaS",
     "headcount": 756,
-    "location": "London, Egypt",
+    "location": "Cairo, Egypt",
     "annual_revenue": "$136M - $265M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -14678,7 +14678,7 @@
     "domain": "lolipop.jp",
     "industry": "Cloud & B2B SaaS",
     "headcount": 226,
-    "location": "Chiba, Japan",
+    "location": "Tokyo, Japan",
     "annual_revenue": "$41M - $79M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -16313,7 +16313,7 @@
     "domain": "seagate.com",
     "industry": "Cloud & B2B SaaS",
     "headcount": 290,
-    "location": "Singapore, United States",
+    "location": "San Francisco, United States",
     "annual_revenue": "$52M - $102M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -18172,7 +18172,7 @@
     "domain": "berkeley.edu",
     "industry": "Cloud & B2B SaaS",
     "headcount": 410,
-    "location": "San Francisco, United States",
+    "location": "Oakland, United States",
     "annual_revenue": "$74M - $144M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -19410,7 +19410,7 @@
     "domain": "omastertelecom.com.br",
     "industry": "Cloud & B2B SaaS",
     "headcount": 476,
-    "location": "Duque de Caxias, Brazil",
+    "location": "S\u00e3o Jo\u00e3o de Meriti, Brazil",
     "annual_revenue": "$86M - $167M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -21533,7 +21533,7 @@
     "domain": "your-server.ly",
     "industry": "Cloud & B2B SaaS",
     "headcount": 641,
-    "location": "Port Louis, Libya",
+    "location": "T\u0101j\u016br\u0101\u2019, Libya",
     "annual_revenue": "$115M - $224M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -22947,7 +22947,7 @@
     "domain": "bnex.com.br",
     "industry": "Enterprise Services",
     "headcount": 247,
-    "location": "San Jose, United States",
+    "location": "Ashburn, United States",
     "annual_revenue": "$44M - $86M",
     "cloud_environment": "Amazon",
     "tech_stack": [
@@ -28207,7 +28207,7 @@
     "domain": "hosted-by-vdsina.com",
     "industry": "Cloud & B2B SaaS",
     "headcount": 311,
-    "location": "Aberystwyth, Netherlands",
+    "location": "Amsterdam, Netherlands",
     "annual_revenue": "$56M - $109M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -28510,7 +28510,7 @@
     "domain": "server-hosting.expert",
     "industry": "Cloud & B2B SaaS",
     "headcount": 527,
-    "location": "Niederkr\u00fcchten, Germany",
+    "location": "D\u00fcsseldorf, Germany",
     "annual_revenue": "$95M - $184M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -28562,7 +28562,7 @@
     "domain": "web-hosting.com",
     "industry": "Cloud & B2B SaaS",
     "headcount": 687,
-    "location": "Las Vegas, United States",
+    "location": "Farnborough, United States",
     "annual_revenue": "$124M - $240M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -28617,7 +28617,7 @@
     "domain": "telecom.net.ar",
     "industry": "Cloud & B2B SaaS",
     "headcount": 570,
-    "location": "San Jos\u00e9 de Met\u00e1n, Argentina",
+    "location": "C\u00f3rdoba, Argentina",
     "annual_revenue": "$103M - $200M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -28724,7 +28724,7 @@
     "domain": "nicesrv.de",
     "industry": "Cloud & B2B SaaS",
     "headcount": 204,
-    "location": "N\u00fcrnberg, Germany",
+    "location": "Stuttgart, Germany",
     "annual_revenue": "$37M - $71M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -28775,7 +28775,7 @@
     "domain": "netia.com.pl",
     "industry": "Cloud & B2B SaaS",
     "headcount": 355,
-    "location": "Warsaw, Poland",
+    "location": "Zielona G\u00f3ra, Poland",
     "annual_revenue": "$64M - $124M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -28826,7 +28826,7 @@
     "domain": "imperva.com",
     "industry": "Cloud & B2B SaaS",
     "headcount": 316,
-    "location": "Asagaya-minami, Singapore",
+    "location": "San Mateo, Singapore",
     "annual_revenue": "$57M - $111M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -28879,7 +28879,7 @@
     "domain": "sl-reverse.com",
     "industry": "Cloud & B2B SaaS",
     "headcount": 592,
-    "location": "Frankfurt am Main, Germany",
+    "location": "Tokyo, Germany",
     "annual_revenue": "$107M - $207M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -28986,7 +28986,7 @@
     "domain": "myvzw.com",
     "industry": "Cloud & B2B SaaS",
     "headcount": 149,
-    "location": "Jacksonville, United States",
+    "location": "Everett, United States",
     "annual_revenue": "$27M - $52M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -29039,7 +29039,7 @@
     "domain": "qwest.net",
     "industry": "Cloud & B2B SaaS",
     "headcount": 132,
-    "location": "Pine Castle, United States",
+    "location": "Thornton, United States",
     "annual_revenue": "$24M - $46M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -29146,7 +29146,7 @@
     "domain": "telecomitalia.it",
     "industry": "Cloud & B2B SaaS",
     "headcount": 835,
-    "location": "Lastra a Signa, Italy",
+    "location": "Romano d'Ezzelino, Italy",
     "annual_revenue": "$150M - $292M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -29201,7 +29201,7 @@
     "domain": "upcloud.host",
     "industry": "Cloud & B2B SaaS",
     "headcount": 451,
-    "location": "Santa Clara, United States",
+    "location": "New York City, United States",
     "annual_revenue": "$81M - $158M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -29255,7 +29255,7 @@
     "domain": "sparklight.net",
     "industry": "Cloud & B2B SaaS",
     "headcount": 649,
-    "location": "Ridgeland, United States",
+    "location": "Sherman, United States",
     "annual_revenue": "$117M - $227M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -29307,7 +29307,7 @@
     "domain": "viettel.vn",
     "industry": "Cloud & B2B SaaS",
     "headcount": 234,
-    "location": "B\u1ebfn Tre, Viet Nam",
+    "location": "S\u00f4ng Thao, Viet Nam",
     "annual_revenue": "$42M - $82M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -29413,7 +29413,7 @@
     "domain": "telenor.se",
     "industry": "Cloud & B2B SaaS",
     "headcount": 218,
-    "location": "Ume\u00e5, Sweden",
+    "location": "Staffanstorp, Sweden",
     "annual_revenue": "$39M - $76M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -29467,7 +29467,7 @@
     "domain": "wanadoo.fr",
     "industry": "Cloud & B2B SaaS",
     "headcount": 202,
-    "location": "Rennes, France",
+    "location": "Marseille, France",
     "annual_revenue": "$36M - $71M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -29681,7 +29681,7 @@
     "domain": "virtua.com.br",
     "industry": "Cloud & B2B SaaS",
     "headcount": 485,
-    "location": "Rio de Janeiro, Brazil",
+    "location": "Porto Feliz, Brazil",
     "annual_revenue": "$87M - $170M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -29733,7 +29733,7 @@
     "domain": "poneytelecom.eu",
     "industry": "Cloud & B2B SaaS",
     "headcount": 759,
-    "location": "Paris, France",
+    "location": "Neuilly-Plaisance, France",
     "annual_revenue": "$137M - $266M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -29785,7 +29785,7 @@
     "domain": "scalabledns.com",
     "industry": "Cloud & B2B SaaS",
     "headcount": 708,
-    "location": "Los Angeles, United States",
+    "location": "Miami, United States",
     "annual_revenue": "$127M - $248M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -29837,7 +29837,7 @@
     "domain": "ctbctelecom.com.br",
     "industry": "Cloud & B2B SaaS",
     "headcount": 125,
-    "location": "Belo Horizonte, Brazil",
+    "location": "Itumbiara, Brazil",
     "annual_revenue": "$22M - $44M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -29943,7 +29943,7 @@
     "domain": "acedatacenter.com",
     "industry": "Cloud & B2B SaaS",
     "headcount": 58,
-    "location": "Singapore, Thailand",
+    "location": "Marseille, Thailand",
     "annual_revenue": "$10M - $20M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -29995,7 +29995,7 @@
     "domain": "datapacket.com",
     "industry": "Cloud & B2B SaaS",
     "headcount": 602,
-    "location": "Rio de Janeiro, United States",
+    "location": "Singapore, United States",
     "annual_revenue": "$108M - $211M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -30048,7 +30048,7 @@
     "domain": "telia.com",
     "industry": "Cloud & B2B SaaS",
     "headcount": 87,
-    "location": "Norrk\u00f6ping, Sweden",
+    "location": "Herrljunga, Sweden",
     "annual_revenue": "$16M - $30M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -30103,7 +30103,7 @@
     "domain": "googlefiber.net",
     "industry": "Cloud & B2B SaaS",
     "headcount": 725,
-    "location": "Overland Park, United States",
+    "location": "San Antonio, United States",
     "annual_revenue": "$130M - $254M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -30155,7 +30155,7 @@
     "domain": "cherryservers.net",
     "industry": "Cloud & B2B SaaS",
     "headcount": 149,
-    "location": "\u0160iauliai, Italy",
+    "location": "Milan, Italy",
     "annual_revenue": "$27M - $52M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -30207,7 +30207,7 @@
     "domain": "megared.net.mx",
     "industry": "Cloud & B2B SaaS",
     "headcount": 568,
-    "location": "Salamanca, Mexico",
+    "location": "Veracruz, Mexico",
     "annual_revenue": "$102M - $199M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -30259,7 +30259,7 @@
     "domain": "trouble-free.net",
     "industry": "Cloud & B2B SaaS",
     "headcount": 796,
-    "location": "San Jose, United States",
+    "location": "New York City, United States",
     "annual_revenue": "$143M - $279M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -30312,7 +30312,7 @@
     "domain": "tele2.se",
     "industry": "Cloud & B2B SaaS",
     "headcount": 783,
-    "location": "Helsingborg, Sweden",
+    "location": "Huddinge, Sweden",
     "annual_revenue": "$141M - $274M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -30525,7 +30525,7 @@
     "domain": "vectant.ne.jp",
     "industry": "Cloud & B2B SaaS",
     "headcount": 473,
-    "location": "Singapore, Japan",
+    "location": "Tokyo, Japan",
     "annual_revenue": "$85M - $166M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -30843,7 +30843,7 @@
     "domain": "iijmobile.jp",
     "industry": "Cloud & B2B SaaS",
     "headcount": 407,
-    "location": "Asagaya-minami, Japan",
+    "location": "Tokyo, Japan",
     "annual_revenue": "$73M - $142M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -31663,7 +31663,7 @@
     "domain": "mymortgage-online.com",
     "industry": "Enterprise Services",
     "headcount": 484,
-    "location": "South Riding, United States",
+    "location": "Newark, United States",
     "annual_revenue": "$87M - $169M",
     "cloud_environment": "Amazon",
     "tech_stack": [
@@ -31843,7 +31843,7 @@
     "domain": "northshore.org",
     "industry": "Cloud & B2B SaaS",
     "headcount": 669,
-    "location": "Singapore, Singapore",
+    "location": "Tokyo, Singapore",
     "annual_revenue": "$120M - $234M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -31889,7 +31889,7 @@
     "domain": "ultaserver.net",
     "industry": "Cloud & B2B SaaS",
     "headcount": 669,
-    "location": "Rochdale, United States",
+    "location": "Amsterdam, United States",
     "annual_revenue": "$120M - $234M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -32203,7 +32203,7 @@
     "domain": "incaptest.co",
     "industry": "Cloud & B2B SaaS",
     "headcount": 422,
-    "location": "Singapore, Singapore",
+    "location": "Hong Kong, Singapore",
     "annual_revenue": "$76M - $148M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -32341,7 +32341,7 @@
     "domain": "managed-vps.net",
     "industry": "Cloud & B2B SaaS",
     "headcount": 675,
-    "location": "New York City, Bulgaria",
+    "location": "Dallas, Bulgaria",
     "annual_revenue": "$122M - $236M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -32884,7 +32884,7 @@
     "domain": "fortisase.com",
     "industry": "Cloud & B2B SaaS",
     "headcount": 536,
-    "location": "Boaz, United States",
+    "location": "Colorado Springs, United States",
     "annual_revenue": "$96M - $188M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -32928,7 +32928,7 @@
     "domain": "sony.com.mx",
     "industry": "Cloud & B2B SaaS",
     "headcount": 292,
-    "location": "Singapore, Hong Kong",
+    "location": "Hong Kong, Hong Kong",
     "annual_revenue": "$53M - $102M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -32974,7 +32974,7 @@
     "domain": "myfritz.net",
     "industry": "Cloud & B2B SaaS",
     "headcount": 357,
-    "location": "Ede, Netherlands",
+    "location": "Nordhausen, Netherlands",
     "annual_revenue": "$64M - $125M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -33878,7 +33878,7 @@
     "domain": "telekom.rs",
     "industry": "Cloud & B2B SaaS",
     "headcount": 223,
-    "location": "Zrenjanin, Serbia",
+    "location": "Kragujevac, Serbia",
     "annual_revenue": "$40M - $78M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -33970,7 +33970,7 @@
     "domain": "esecuritel.com",
     "industry": "Cloud & B2B SaaS",
     "headcount": 637,
-    "location": "Singapore, Singapore",
+    "location": "Tokyo, Singapore",
     "annual_revenue": "$115M - $223M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -34554,7 +34554,7 @@
     "domain": "clickandsend.com.au",
     "industry": "Cloud & B2B SaaS",
     "headcount": 221,
-    "location": "Singapore, Japan",
+    "location": "Tokyo, Japan",
     "annual_revenue": "$40M - $77M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -34734,7 +34734,7 @@
     "domain": "d-cruise.jp",
     "industry": "Cloud & B2B SaaS",
     "headcount": 255,
-    "location": "Singapore, United States",
+    "location": "San Mateo, United States",
     "annual_revenue": "$46M - $89M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -35592,7 +35592,7 @@
     "domain": "bt.cn",
     "industry": "Enterprise Services",
     "headcount": 514,
-    "location": "Curitiba, Brazil",
+    "location": "Santa Clara, Brazil",
     "annual_revenue": "$93M - $180M",
     "cloud_environment": "DigitalOcean",
     "tech_stack": [
@@ -35636,7 +35636,7 @@
     "domain": "bsci.com",
     "industry": "Enterprise Services",
     "headcount": 827,
-    "location": "Ashburn, United States",
+    "location": "Boardman, United States",
     "annual_revenue": "$149M - $289M",
     "cloud_environment": "Amazon",
     "tech_stack": [
@@ -38250,7 +38250,7 @@
     "domain": "sony.com.co",
     "industry": "Cloud & B2B SaaS",
     "headcount": 273,
-    "location": "Asagaya-minami, Singapore",
+    "location": "Singapore, Singapore",
     "annual_revenue": "$49M - $96M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -38388,7 +38388,7 @@
     "domain": "ddos-guard.net",
     "industry": "Cloud & B2B SaaS",
     "headcount": 570,
-    "location": "Moscow, Netherlands",
+    "location": "Lelystad, Netherlands",
     "annual_revenue": "$103M - $200M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -38613,7 +38613,7 @@
     "domain": "promobrasil.com.mx",
     "industry": "Cloud & B2B SaaS",
     "headcount": 179,
-    "location": "Asagaya-minami, Japan",
+    "location": "San Mateo, Japan",
     "annual_revenue": "$32M - $63M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -38883,7 +38883,7 @@
     "domain": "vf-ua.net",
     "industry": "Cloud & B2B SaaS",
     "headcount": 47,
-    "location": "Vynohradiv, Ukraine",
+    "location": "Kyiv, Ukraine",
     "annual_revenue": "$8M - $16M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -39293,7 +39293,7 @@
     "domain": "arandomserver.com",
     "industry": "Cloud & B2B SaaS",
     "headcount": 111,
-    "location": "Toronto, United States",
+    "location": "Dallas, United States",
     "annual_revenue": "$20M - $39M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -39928,7 +39928,7 @@
     "domain": "wp-pro.io",
     "industry": "Cloud & B2B SaaS",
     "headcount": 70,
-    "location": "Frankfurt am Main, Germany",
+    "location": "Berlin, Germany",
     "annual_revenue": "$13M - $24M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -45108,7 +45108,7 @@
     "domain": "hino.co.jp",
     "industry": "Cloud & B2B SaaS",
     "headcount": 145,
-    "location": "Asagaya-minami, Japan",
+    "location": "Singapore, Japan",
     "annual_revenue": "$26M - $51M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -46823,7 +46823,7 @@
     "domain": "sparqnet.net",
     "industry": "Cloud & B2B SaaS",
     "headcount": 446,
-    "location": "Taipei, Taiwan",
+    "location": "Banqiao, Taiwan",
     "annual_revenue": "$80M - $156M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -46959,7 +46959,7 @@
     "domain": "azure.com",
     "industry": "Enterprise Services",
     "headcount": 111,
-    "location": "Reston, United States",
+    "location": "San Antonio, United States",
     "annual_revenue": "$20M - $39M",
     "cloud_environment": "Azure",
     "tech_stack": [
@@ -47005,7 +47005,7 @@
     "domain": "myrepublic.co.id",
     "industry": "Cloud & B2B SaaS",
     "headcount": 786,
-    "location": "Malang, Indonesia",
+    "location": "Cikarang, Indonesia",
     "annual_revenue": "$141M - $275M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
@@ -47050,7 +47050,7 @@
     "domain": "airtel.in",
     "industry": "Cloud & B2B SaaS",
     "headcount": 97,
-    "location": "Gurugram, India",
+    "location": "Noida, India",
     "annual_revenue": "$17M - $34M",
     "cloud_environment": "Multi-Cloud (AWS/Hybrid)",
     "tech_stack": [
