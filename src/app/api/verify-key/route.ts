@@ -33,7 +33,7 @@ export async function POST(req: NextRequest) {
         method: "GET",
         headers: {
           "Authorization": `Bearer ${apiKey}`,
-          "HTTP-Referer": "https://cyberintel.pages.dev",
+          "HTTP-Referer": "https://project-cyberintel.manikumarsingh.com",
           "X-Title": "CyberIntel Sales Platform",
         },
         signal: controller.signal,

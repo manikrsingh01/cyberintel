@@ -38,7 +38,7 @@ async function callOpenRouter(prompt: string, model: string = DEFAULT_MODEL, cus
       headers: {
         "Authorization": `Bearer ${apiKey}`,
         "Content-Type": "application/json",
-        "HTTP-Referer": "https://cyberintel.pages.dev",
+        "HTTP-Referer": "https://project-cyberintel.manikumarsingh.com",
         "X-Title": "CyberIntel Sales Platform",
       },
       body: JSON.stringify({

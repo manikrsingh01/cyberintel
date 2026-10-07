@@ -9,6 +9,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://project-cyberintel.manikumarsingh.com"),
   title: "CyberIntel - AI Sales Intelligence Platform",
   description: "B2B Sales Intelligence Platform for Cybersecurity Software Companies. Identify, prioritize, and target in-market enterprise accounts.",
 };

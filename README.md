@@ -3,7 +3,7 @@
 > **Production Platform**: AI-Native Sales Intelligence Platform for Enterprise Cybersecurity Vendors.
 > Built with Next.js 15, React 19, TypeScript, Tailwind CSS, Python Eval Harness, and Agentic Skills Scaffolding.
 
-**Live Hosted App**: [https://project-cyberintel.pages.dev/](https://project-cyberintel.pages.dev/)
+**Live Hosted App**: [https://project-cyberintel.manikumarsingh.com](https://project-cyberintel.manikumarsingh.com)
 
 ---
 
